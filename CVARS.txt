@@ -1,0 +1,91 @@
+#library "CVARS"
+#include "zcommon.acs"
+
+
+
+script 647 enter
+{
+    //ClearInventory();
+    GiveInventory("CheckMarines", 1);
+}
+
+Script 799 (VOID)
+{
+
+if
+	(GetCvar("isrunningzandronum") == 1)
+{
+if	(GetCvar("bd_bloodamount") == 0) { SetActorState(0,"LowBlood"); }
+if	(GetCvar("bd_bloodamount") == 1) { SetActorState(0,"LowBlood"); }
+if	(GetCvar("bd_bloodamount") == 3) { SetActorState(0,"LotsOfBlood"); }
+if	(GetCvar("bd_bloodamount") >= 4) { SetActorState(0,"AbsurdBlood"); }
+}
+
+
+if
+	(GetCvar("isrunningzandronum") == 0)
+{
+if	(GetCvar("zdoombrutalblood") == 0) { SetActorState(0,"LowBlood"); }
+if	(GetCvar("zdoombrutalblood") == 1) { SetActorState(0,"LowBlood"); }
+if	(GetCvar("zdoombrutalblood") == 3) { SetActorState(0,"LotsOfBlood"); }
+if	(GetCvar("zdoombrutalblood") >= 4) { SetActorState(0,"AbsurdBlood"); }
+}
+
+
+if
+	(GetCvar("isrunningzandronum") == 1)
+{
+if	(GetCvar("bd_bloodamount") == 666)
+	{
+	SetActorState(0,"AbsurdBlood"); 
+	GiveInventory("AnimuGore", 1);
+	}
+}
+
+if
+	(GetCvar("isrunningzandronum") == 0)
+{
+if	(GetCvar("zdoombrutalblood") == 666)
+	{
+	SetActorState(0,"AbsurdBlood"); 
+	GiveInventory("AnimuGore", 1);
+	}
+}
+
+
+}
+
+Script 798 (VOID)
+{
+if	(GetCvar("bd_lowgraphicsmode") == 1) { GiveInventory("LowGraphicsMode", 1); }
+if	(GetCvar("zdoombrutaljanitor") == 1) { GiveInventory("LowGraphicsMode", 1); }
+}
+
+
+Script 797 (VOID)
+{
+if	(GetCvar("bd_bloodamount") == 1) { SetActorState(0,"Vanish"); }
+if	(GetCvar("bd_bloodamount") == 0) { SetActorState(0,"Vanish"); }
+}
+
+
+Script 795 (VOID)
+{
+if	(GetCvar("bd_disabledecorations") == 1) { SetActorState(0,"Vanilla"); }
+}
+
+
+
+Script 719 (VOID)
+{
+if	(GameType () == GAME_NET_DEATHMATCH) 
+	SetActorState(0,"DM"); 
+}
+
+Script 728 (VOID)
+{
+if	(GetCvar("bd_nobulletpenetration") == 0) { TakeInventory("nopenetration", 1);}
+if	(GetCvar("bd_nobulletpenetration") == 1) { GiveInventory("nopenetration", 1);}
+if	(GetCvar("bd_shotgunstrap") == 1) { GiveInventory("useshotgunstrap", 1);}
+if	(GetCvar("zdoombd_shotgunstrap") == 1) { GiveInventory("useshotgunstrap", 1);}
+}

@@ -1,0 +1,34 @@
+
+Actor IsPlayingAsPurist : Inventory
+{
+inventory.maxamount 1
+}
+
+
+ACTOR Purist : Doomer
+{
+	Player.DisplayName "Classic"
+	Player.StartItem "ClassicPistol"
+	Player.StartItem "ClassicFist"
+	Player.StartItem "Clip2", 50
+	player.viewheight	44
+    player.attackzoffset 16
+	damagefactor "Head", 0.0
+	damagefactor "FriendBullet", 0.0
+    damagefactor "Taunt", 0.0
+    damagefactor "KillMe", 0.0
+	damagefactor "Shrapnel", 0.0
+    damagefactor "MinorHead", 0.0
+    damagefactor "Decaptate", 0.0
+	damagefactor "MonsterKnocked", 0.0
+	damagefactor "BHFTOnBarrel", 0.0
+	damagefactor "GibRemoving", 0.0
+	damagefactor "HelperMarineFatallity", 0.0
+	damagefactor "Leg", 0.0
+	damagefactor "SpawnMarine", 0.0
+	DamageFactor "CauseObjectsToSplash", 0.0
+	//Player.StartItem "IsPlayer", 1
+	//Player.StartItem "IsPlayingAsPurist", 1
+	//Player.StartItem "TargetIsAMarine", 1
+	Player.CrouchSprite "PLYC"
+}

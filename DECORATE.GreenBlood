@@ -1,0 +1,184 @@
+
+actor Green_Blood : Brutal_Blood
+{
+translation "168:191=112:127", "16:47=123:127"
+Decal GreenBloodSplat
+ states
+ {
+  Spawn:
+	    TNT1 A 0 A_JumpIf(waterlevel > 1, "Splash")
+        TNT1 AAAA 0 A_CustomMissile ("Green_FlyingBloodTrail", 0, 0, random (0, 360), 2, random (0, 180))
+        TNT1 AAAAAAA 0 A_CustomMissile ("Green_FlyingBloodTrail", 0, 0, random (0, 180), 2, random (0, 180))
+  	    TNT1 A 0 A_CustomMissile ("Green_FlyingBlood", 7, 0, random (0, 360), 2, random (30, 150))
+       stop
+ }
+}
+
+actor Green_FlyingBlood: Brutal_FlyingBlood
+{
+translation "168:191=112:127", "16:47=123:127"
+Decal GreenBloodSplat
+
+states
+{
+     Death:
+  	    //TNT1 A 0 A_CustomMissile ("SmallBloodSplasher", 0, 0, random (0, 360), 2, random (0, 160))
+       TNT1 A 1 A_SpawnItem("Green_BloodSpot",0,0,0,1)
+        XDT1 EFGHIJKL 3
+       Stop
+}
+}
+
+
+actor Green_FlyingBloodTrail: BloodTr255
+{
+translation "168:191=112:127", "16:47=123:127"
+}
+
+actor Green_BloodSpot: Brutal_BloodSpot
+{
+translation "168:191=112:127", "16:47=123:127"
+Decal GreenBloodSplat
+}
+
+
+
+ACTOR GreenBloodFootPrintLeft: RedBloodFootPrintLeft
+{
+translation "168:191=112:127", "16:47=123:127"
+Decal BlueBloodSplat
+}
+
+
+ACTOR GreenBloodFootPrintRight: RedBloodFootPrintRight
+{
+translation "168:191=112:127", "16:47=123:127"
+Decal BlueBloodSplat
+}
+
+
+
+
+
+
+
+
+
+
+
+
+actor GreenBloodmist : Brutal_FlyingBlood
+{
+decal BrutalBloodSuper
+translation "168:191=112:127", "16:47=123:127"
++MISSILE +NOTELEPORT +NOBLOCKMAP +NOBLOCKMONST +DONTSPLASH +CLIENTSIDEONLY +THRUACTORS
+scale    0.8
+radius    2
+height    2
+speed    8
+Gravity 0.4
+RenderStyle    Translucent
+alpha    0.9
+states
+{
+Spawn:
+MSBL ABCDEFGH 1
+MSBL HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH 1 A_FadeOut(0.005)
+Stop
+
+Death:
+TNT1 A 0
+TNT1 A 0 A_CheckFloor("Disappear")
+MSBL HHHHHHHH 1 A_FadeOut(0.1)
+Stop
+
+Disappear:
+TNT1 A 2
+Stop
+}
+}
+
+
+actor GreenBloodmistBig : GreenBloodmist
+{
+scale    0.9
+speed    6
+GRAVITY 0.4
+}
+
+
+actor GreenBloodmistSmall : GreenBloodmist
+{
+scale    0.45
+Gravity 0.8
+}
+
+
+actor GreenBloodmistExtraBig : GreenBloodmist
+{
+scale    1.4
+}
+
+actor GreenBloodmistXXBig : GreenBloodmist
+{
+scale    2.2
+GRAVITY 0.2
+}
+
+
+
+ACTOR GreenGuts
+{
+    Radius 8
+    Height 12
+    Speed 6
+	Mass 1
+	BounceFactor 0.4
+	Renderstyle Translucent
+	Alpha 0.9
+	+DOOMBOUNCE
+    +NOBLOCKMAP
+	+MISSILE
+    +NOTELEPORT
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    +FORCEXYBILLBOARD
+	-EXPLODEONWATER
+	translation "168:191=112:127", "16:47=123:127"
+    DeathSound "misc/xdeath1"
+	Decal BrutalBloodSplat
+	Scale 1.1
+    States
+    {
+    Spawn:
+        GUTS ABCD 8
+        Loop
+    Death:
+	   
+        TNT1 A 0 A_Jump(128, 5)
+        GUTS E 8
+		TNT1 A 0 A_JumpIf(waterlevel > 1, "Water")
+        GUTS E 9009
+        Stop
+        TNT1 AAAAAA 0
+        GUTS F 8
+		TNT1 A 0 A_JumpIf(waterlevel > 1, "Water")
+        GUTS F 9009
+        Stop
+	
+	Water:
+	TNT1 A 0
+	TNT1 A 0 A_Jump(128, "Water2")
+	Goto Water1
+	
+	Water1:
+	GUTS GH 10
+	//TNT1 A 0 A_JumpIf(waterlevel == 0, "Death")
+	Loop
+	
+	Water2:
+	GUTS IJ 10
+	//TNT1 A 0 A_JumpIf(waterlevel == 0, "Death")
+	Loop
+    }
+}

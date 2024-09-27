@@ -1,0 +1,5 @@
+
+   addmenukey "Kick" +kickem
+   alias +kickem "puke 301"
+   alias -kickem "puke 303"
+   defaultbind Q +kickem

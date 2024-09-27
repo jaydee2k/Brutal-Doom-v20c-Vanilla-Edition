@@ -1,0 +1,270 @@
+
+// IF YOU WANT TO USE STUFF FROM THIS MOD, GIVE ME CREDITS
+
+Actor EnemyMemory : Inventory
+{
+inventory.maxamount 60
+}
+
+Actor CantFire : Inventory
+{
+inventory.maxamount 1
+}
+
+
+Actor LookingForPlayer : Inventory
+{
+inventory.maxamount 30
+}
+
+Actor BrutalCounter : Inventory
+{
+inventory.maxamount 500
+}
+
+Actor BrutalCounter2 : Inventory
+{
+inventory.maxamount 500
+}
+
+Actor DebrisGeneral
+{
++MISSILE
++NOBLOCKMAP
++NOGRAVITY
++DROPOFF
++NOTELEPORT
++FORCEXYBILLBOARD
++NOTDMATCH
++GHOST
+radius 1
+height 1
+mass 1
+damage 0
+}
+
+
+//Guns Guns Guns
+#include MELEE.txt
+#include SAW.txt
+#include SAW2.txt
+#include RIFLE.txt
+#include DUALRIFLE.txt
+#include PISTOL.txt
+#include SHOTGUN.txt
+#include SSG.txt
+#include MINIGUN.txt
+#include ROCKETLAUNCHER.txt
+#include EXPLOSIVES.txt
+#include PLASMA.txt
+#include DUALPLASMA.txt
+#include BFG.txt
+
+#include STGRENADELAUNCH.txt
+#include STBFG10k.txt
+#include STRAILGUN.txt
+//MeatShields
+#include IMPSHIELD.txt
+#include ZMANSHIELD.txt
+#include SGUYSHIELD.txt
+
+//DECORATIONS
+#include FURNITURE.txt
+#include LAMPS.txt
+#include NATURAL.txt
+#include FIREWORKS.txt
+#include TORCHES.txt
+#include DEAD.txt
+
+//Enemies
+#include ZOMBIEMEN.txt
+#include SERGEANTS.txt
+#include COMANDO.txt
+#include IMPS.txt
+#include DEMONS.txt
+#include SPECTRE.txt
+#include KNIGHT.txt
+#include BARON.txt
+#include LOSTSOUL.txt
+#include SPIDERS.txt
+#include REVENANT.txt
+#include MANCUBUS.txt
+#include CACODEMO.txt
+#include PAIN.txt
+#include ARCHVILE.txt
+#include CYBERDEMON.txt
+#include MASTERMIND.txt
+//ST Monsters
+#include BELPHEGOR.txt
+#include JUGGERNAUT.txt
+//Gore N' Blood
+#include GORE!!!.txt
+#include GORE2.txt
+#include GORE3.txt
+#include BLOOD.txt
+#include BLOODSPLASH.txt
+#include BURN.txt
+#include MP40.txt
+#include NAZIS.txt
+
+//MISC
+#include HEAD_SYS.txt
+#include PARTICLES.txt
+#include SMOKE.txt
+#include CASING.txt
+#include FIRE.txt
+#include SPARKS.txt
+#include FLARES.txt
+#include ARTIFACT.txt
+#include HEALTH2.txt
+#include BOSSBOX.txt
+#include DROPABLES.txt
+#include PUFF.txt
+#include TRACERS.txt
+#include EEEVILLL.txt
+//#include ARACHBOX
+
+//Player Classes
+#include PLAYER.txt
+#include MARINES.txt
+#include EXTRA.txt
+
+Actor oneliner: Inventory
+{
+inventory.maxamount 1
+}
+
+
+
+
+
+Actor advtaunting: Inventory
+{
+inventory.maxamount 1
+}
+
+
+
+Actor FistsSelected: Inventory
+{
+inventory.maxamount 1
+}
+
+Actor ShotgunSelected: Inventory
+{
+inventory.maxamount 1
+}
+
+Actor MinigunSelected: Inventory
+{
+inventory.maxamount 1
+}
+
+Actor SSGSelected: Inventory
+{
+inventory.maxamount 1
+}
+
+Actor RocketLauncherSelected: Inventory
+{
+inventory.maxamount 1
+}
+
+Actor GrenadeLauncherSelected: Inventory
+{
+inventory.maxamount 1
+}
+
+
+Actor PlasmaGunSelected: Inventory
+{
+inventory.maxamount 1
+}
+
+Actor RailGunSelected: Inventory
+{
+inventory.maxamount 1
+}
+
+
+Actor BFGSelected: Inventory
+{
+inventory.maxamount 1
+}
+
+Actor BFG10KSelected: Inventory
+{
+inventory.maxamount 1
+}
+
+
+Actor SubMachineGunSelected: Inventory
+{
+inventory.maxamount 1
+}
+
+
+Actor FlameCannonSelected: Inventory
+{
+inventory.maxamount 1
+}
+
+
+Actor RevenantLauncherSelected: Inventory
+{
+inventory.maxamount 1
+}
+
+Actor FallingHeight : Inventory
+{
+inventory.maxamount 100
+}
+
+
+Actor LostSoulSelected: Inventory
+{
+inventory.maxamount 1
+}
+
+
+
+Actor DeathTimer1 : Inventory
+{
+inventory.maxamount 120
+}
+
+
+Actor Timer555 : Inventory
+{
+inventory.maxamount 555
+}
+
+
+
+
+
+
+
+
+
+
+Actor TargetIsACyberdemon : Inventory
+{
+inventory.maxamount 1
+}
+
+
+Actor TargetIsAMastermind : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor TargetIsABaronOfHell : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor TargetIsAMancubus : Inventory
+{
+inventory.maxamount 1
+}
