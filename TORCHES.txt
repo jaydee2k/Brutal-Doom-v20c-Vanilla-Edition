@@ -1,0 +1,595 @@
+Actor TallTorch_Red : RedTorch replaces RedTorch
+{
+height 85
+radius 10
++LOOKALLAROUND
+-SHOOTABLE
++INVULNERABLE
++NOBLOOD
++GHOST
++RANDOMIZE
+Mass 900000
+scale .5
+states
+	{
+	Vanilla:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem("RedTorchVanilla")
+		Stop
+		
+	Spawn:
+		TTRB A 0
+		TNT1 A 0 A_Playsound("BDFireplace2", 1, 1, 1)
+		MARN A 0 ACS_ExecuteAlways(795, 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 1
+		
+	Stay:
+        TNT1 A 0 A_CheckSight("Spawn2")
+		//TNT1 A 0 A_Playsound("BDfireplace")
+		TNT1 A 0 bright A_CustomMissile ("RealFlameTrailsSmall", 58, 0, random (0, 360), 2, random (70, 110))
+		TNT1 A 0 A_CustomMissile ("ImBallGettingReady3", 59, 0, random (0, 140), 2, random (0, 160))
+		TTRB AC 2 A_SpawnItem("RedFlare22",0,59)
+		Loop
+
+   Spawn2:
+        //TNT1 A 0 A_Playsound("BDfireplace")
+		TTRB A 6
+		Goto Stay
+
+	}
+}
+
+Actor TallTorch_Blue : TallTorch_Red replaces BlueTorch
+{
+states
+	{
+	Vanilla:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem("BlueTorchVanilla")
+		Stop
+		
+	Spawn:
+		TTRB A 0
+		TNT1 A 0 A_Playsound("BDFireplace2", 1, 1, 1)
+		MARN A 0 ACS_ExecuteAlways(795, 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 1
+		
+	Stay:
+        TNT1 A 0 A_CheckSight("Spawn2")
+        //TNT1 A 0 A_Playsound("BDfireplace")
+
+		TNT1 A 0 bright A_CustomMissile ("RealFlameTrailsBlue", 58, 0, random (0, 360), 2, random (70, 110))
+		TNT1 A 0 A_CustomMissile ("BallGettingReadyBlue", 59, 0, random (0, 140), 2, random (0, 160))
+		TTRB AC 2 A_SpawnItem("BlueFlare22",0,59)
+		Loop
+
+   Spawn2:
+        //TNT1 A 0 A_Playsound("BDfireplace")
+		TTRB A 6
+		Goto Stay
+
+	}
+}
+
+Actor TallTorch_Green : TallTorch_Red replaces GreenTorch
+{
+states
+	{
+	Vanilla:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem("GreenTorchVanilla")
+		Stop
+		
+	Spawn:
+		TTRB A 0
+		TNT1 A 0 A_Playsound("BDFireplace2", 1, 1, 1)
+		MARN A 0 ACS_ExecuteAlways(795, 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 1
+		
+	Stay:
+        TNT1 A 0 A_CheckSight("Spawn2")
+        //TNT1 A 0 A_Playsound("BDfireplace")
+		TNT1 A 0 bright A_CustomMissile ("RealFlameTrailsGreen", 58, 0, random (0, 360), 2, random (70, 110))
+		TNT1 A 0 A_CustomMissile ("BallGettingReadyGreen", 59, 0, random (0, 140), 2, random (0, 160))
+		TTRB AC 2 A_SpawnItem("GreenFlare22",0,59)
+		Loop
+
+   Spawn2:
+        //TNT1 A 0 A_Playsound("BDfireplace")
+		TTRB A 6
+		Goto Stay
+
+	}
+}
+
+Actor ShortTorch_Blue : ShortBlueTorch replaces ShortBlueTorch
+{
++LOOKALLAROUND
+-SHOOTABLE
++INVULNERABLE
++NOBLOOD
++GHOST
++RANDOMIZE
+Mass 900000
+height 80
+radius 8
+scale .4
+states
+	{
+	Vanilla:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem("ShortBlueTorchVanilla")
+		Stop
+		
+	Spawn:
+		TTRB A 0
+		TNT1 A 0 A_Playsound("BDFireplace2", 1, 1, 1)
+		MARN A 0 ACS_ExecuteAlways(795, 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 1
+		
+	Stay:
+	    TNT1 A 0 A_CheckSight("Spawn2")
+        //TNT1 A 0 A_Playsound("BDfireplace")
+		TNT1 A 0 bright A_CustomMissile ("RealFlameTrailsBlue", 30, 0, random (0, 360), 2, random (70, 110))
+		TNT1 A 0 A_CustomMissile ("BallGettingReadyBlue", 30, 0, random (0, 140), 2, random (0, 160))
+		STRB AA 2 A_SpawnItem("BlueFlare22",0,30)
+		Loop
+
+	Spawn2:
+        //TNT1 A 0 A_Playsound("BDfireplace")
+		STRB A 6
+		Goto Stay
+	}
+}
+
+Actor ShortTorch_Red : ShortTorch_Blue replaces ShortRedTorch
+{
+states
+	{
+	Vanilla:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem("ShortRedTorchVanilla")
+		Stop
+		
+	Spawn:
+		TTRB A 0
+		TNT1 A 0 A_Playsound("BDFireplace2", 1, 1, 1)
+		MARN A 0 ACS_ExecuteAlways(795, 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 1
+		
+	Stay:
+	    TNT1 A 0 A_CheckSight("Spawn2")
+		//TNT1 A 0 A_Playsound("BDfireplace")
+		TNT1 A 0 bright A_CustomMissile ("RealFlameTrailsSmall", 30, 0, random (0, 360), 2, random (70, 110))
+		TNT1 A 0 A_CustomMissile ("ImBallGettingReady3", 30, 0, random (0, 140), 2, random (0, 160))
+		STRB AA 2 A_SpawnItem("RedFlare22",0,30)
+		
+		Loop
+
+	Spawn2:
+        //TNT1 A 0 A_Playsound("BDfireplace")
+		STRB A 6
+		Goto Stay
+	}
+}
+
+Actor ShortTorch_Green : ShortTorch_Blue replaces ShortGreenTorch
+{
+states
+	{
+	Vanilla:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem("ShortGreenTorchVanilla")
+		Stop
+		
+	Spawn:
+		TTRB A 0
+		TNT1 A 0 A_Playsound("BDFireplace2", 1, 1, 1)
+		MARN A 0 ACS_ExecuteAlways(795, 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 1
+		
+	Stay:
+	    TNT1 A 0 A_CheckSight("Spawn2")
+        //TNT1 A 0 A_Playsound("BDfireplace")
+		TNT1 A 0 bright A_CustomMissile ("RealFlameTrailsGreen", 30, 0, random (0, 360), 2, random (70, 110))
+		TNT1 A 0 A_CustomMissile ("BallGettingReadyGreen", 30, 0, random (0, 140), 2, random (0, 160))
+		STRB AA 2 A_SpawnItem("GreenFlare22",0,30)
+		Loop
+
+	Spawn2:
+        //TNT1 A 0 A_Playsound("BDfireplace")
+		STRB A 5
+		Goto Spawn
+	}
+}
+
+
+Actor Candelabra1 : Candelabra replaces Candelabra
+{
++LOOKALLAROUND
++INVULNERABLE
++NOBLOOD
++FORCEYBILLBOARD
++GHOST
++RANDOMIZE
+Mass 900000
+scale 0.7
+states
+	{
+	Vanilla:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem("CandelabraVanilla")
+		Stop
+		
+	Spawn:
+		TTRB A 0
+		MARN A 0 ACS_ExecuteAlways(795, 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 1
+		
+	Stay:
+	    TNT1 A 0 A_CheckSight("Spawn2")
+		TNT1 A 0 bright A_SpawnItem("YellowFlare22",0,61)
+		CBRA CC 1 bright
+		TNT1 A 0 bright A_SpawnItem("YellowFlare22",0,61)
+		CBRA BC 1 bright
+		TNT1 A 0 bright A_SpawnItem("YellowFlare22",0,61)
+		CBRA BC 1 bright
+		TNT1 A 0 bright A_SpawnItem("YellowFlare22",0,61)
+		CBRA BB 1 bright
+		Loop
+	Spawn2:
+	    CBRA C 7 bright
+		Goto Stay
+	}
+}
+
+Actor Candlestick1 : Candlestick replaces Candlestick
+{
++LOOKALLAROUND
++RANDOMIZE
+scale .7
+states
+	{
+	Vanilla:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem("CandleVanilla")
+		Stop
+		
+	Spawn:
+		TTRB A 0
+		MARN A 0 ACS_ExecuteAlways(795, 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 1
+		
+	Stay:
+	    TNT1 A 0 A_CheckSight("Spawn2")
+		TNT1 A 0 bright A_SpawnItem("YellowFlareSmall22Long",0,16)
+		CAND CCCB 1 bright
+		TNT1 A 0 bright A_SpawnItem("YellowFlareSmall22Long",0,16)
+		CAND BCBB 1 bright
+		Loop
+	Spawn2:
+	    CAND C 5
+		Goto Stay
+	}
+}
+
+Actor BurningBarrel1 replaces BurningBarrel
+{
++LOOKALLAROUND
++SHOOTABLE
++NOBLOOD
++GHOST
++NOTARGET
++FRIENDLY
+-BOSS
++RANDOMIZE
+Radius 16
++SOLID
+height 40
+Health 30
+DamageFactor "kick", 5.0
+DamageFactor "SuperPunches", 5.0
+Damagefactor "SuperKick", 5.0
+Damagefactor "LowKick", 5.0
+Damagefactor "ExtremePunches", 5.0
+states
+	{
+	Vanilla:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem("BurningBarrelVanilla")
+		Stop
+		
+	Spawn:
+		TTRB A 0
+		TNT1 A 0 A_Playsound("BDFireplace", 1, 1, 1)
+		MARN A 0 ACS_ExecuteAlways(795, 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		TNT1 A 1
+		
+	Stay:
+		TNT1 A 0 A_CheckSight("Spawn2")
+		TNT1 A 0 bright A_CustomMissile ("BlackSmokePillarParticle", 38, 0, random (40, 180), 2, random (60, 120))
+		TNT1 A 0 bright A_CustomMissile ("RealFlameTrailsSmallLong", 38, 0, random (40, 180), 2, random (50, 130))
+		TNT1 A 0 A_CustomMissile ("ImBallGettingReady2", 35, 0, random (0, 140), 2, random (0, 160))
+		BURB AAA 1 bright A_SpawnItem("RedFlare3",0,42)
+
+		TNT1 A 0 bright A_CustomMissile ("BlackSmokePillarParticle", 38, 0, random (40, 180), 2, random (60, 120))
+		TNT1 A 0 bright A_CustomMissile ("RealFlameTrailsSmallLong", 38, 0, random (40, 180), 2, random (50, 130))
+		TNT1 A 0 A_CustomMissile ("ImBallGettingReady2", 35, 0, random (0, 140), 2, random (0, 160))
+		BURB AA 2 bright A_SpawnItem("RedFlare3",0,46)
+		
+		TNT1 A 0 bright A_CustomMissile ("BlackSmokePillarParticle", 38, 0, random (40, 180), 2, random (60, 120))
+		TNT1 A 0 bright A_CustomMissile ("RealFlameTrailsSmallLong", 38, 0, random (40, 180), 2, random (50, 130))
+		TNT1 A 0 A_CustomMissile ("ImBallGettingReady2", 35, 0, random (0, 140), 2, random (0, 160))
+		BURB AA 2 bright A_SpawnItem("RedFlare3",0,38)
+		
+		TNT1 A 0 bright A_CustomMissile ("BlackSmokePillarParticle", 38, 0, random (40, 180), 2, random (60, 120))
+		TNT1 A 0 bright A_CustomMissile ("RealFlameTrailsSmallLong", 38, 0, random (40, 180), 2, random (50, 130))
+		TNT1 A 0 A_CustomMissile ("ImBallGettingReady2", 35, 0, random (0, 140), 2, random (0, 160))
+		BURB AA 2 bright A_SpawnItem("RedFlare3",0,44)
+		BURB A 0 A_SpawnItem("BurningBarrelDamage",0,42)
+		TNT1 A 0 bright A_CustomMissile ("BlackSmokePillarParticle", 38, 0, random (40, 180), 2, random (60, 120))
+		TNT1 A 0 bright A_CustomMissile ("RealFlameTrailsSmallLong", 30, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_CustomMissile ("ImBallGettingReady2", 35, 0, random (0, 140), 2, random (0, 160))
+		BURB AA 2 bright A_SpawnItem("RedFlare3",0,42)
+		
+		Loop
+
+	Spawn2:
+		BURB A 10
+		Goto Stay
+	
+	Pain.Kick:
+	Death.ExtremePunches:
+	Death.Kick:
+	Death.SuperKick:
+	Death.LowKick:
+	Death.SuperPunches:
+	    TNT1 A 0 A_Pain
+		TNT1 A 0 A_StopSound(1)
+		TNT1 A 1 A_FaceTarget
+		TNT1 A 0 A_NoBlocking
+        TNT1 AAA 0 A_CustomMissile ("FlyingBurningFuel", 24, 0, random (150, 210), 2, random (0, 40))
+		TNT1 AA 0 A_CustomMissile ("FlyingBurningFuel2", 24, 0, random (150, 210), 2, random (0, 40))
+		TNT1 AA 0 A_CustomMissile ("FlyingBurningFuel3", 24, 0, random (150, 210), 2, random (0, 40))
+        BARK DE 3
+		BARK F -1
+		Stop
+		
+	Death.Explosive:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_StopSound(1)
+        TNT1 AAA 0 A_CustomMissile ("FlyingBurningFuel", 24, 0, random (0, 360), 2, random (30, 80))
+		TNT1 AA 0 A_CustomMissile ("FlyingBurningFuel2", 24, 0, random (0, 360), 2, random (30, 80))
+		TNT1 AA 0 A_CustomMissile ("FlyingBurningFuel3", 24, 0, random (0, 360), 2, random (30, 80))
+		TNT1 A 0 A_SpawnItem ("BigRicoChet", 0, -15)
+		TNT1 A 0 A_SpawnItemEx ("DetectFloorCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+	    TNT1 A 0 A_SpawnItemEx ("DetectCeilCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_SpawnItemEx ("ExplosionFlareSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+        TNT1 A 0 A_SpawnItemEx ("BarrelExplosion",0,0,30,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_SpawnItemEx ("BarrelKaboom",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 AAAAAAA 0 A_CustomMissile ("ExplosionFlames", 0, 0, random (0, 360), 2, random (0, 360))
+        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile ("ExplosionParticleHeavy", 0, 0, random (0, 360), 2, random (0, 180))
+        TNT1 AAAAAA 0 A_CustomMissile ("ExplosionParticleHeavy", 0, 0, random (0, 360), 2, random (0, 180))
+		TNT1 AAA 0 A_CustomMissile ("BarrelShrapnel1", 25, 0, random (0, 360), 2, random (30, 160))
+		TNT1 AAA 0 A_CustomMissile ("BarrelShrapnel2", 15, 0, random (0, 360), 2, random (30, 160))
+		TNT1 AAA 0 A_CustomMissile ("BarrelShrapnel3", 5, 0, random (0, 360), 2, random (30, 160))
+		TNT1 AAA 0 A_CustomMissile ("BarrelShrapnel4", 5, 0, random (0, 360), 2, random (30, 160))
+		Stop
+	   
+	
+	}
+}
+
+
+actor BurningBarrelDamage
+{
+	+NOTARGET
+Radius 0
+Height 0
+DamageType Fire
++NOGRAVITY
++NOTELEPORT
++NODAMAGETHRUST
++THRUGHOST
++NORADIUSDMG
++NOEXTREMEDEATH
++FORCERADIUSDMG
+-BLOODSPLATTER
++BLOODLESSIMPACT 
+PROJECTILE
+	+DEHEXPLOSION
+	+ACTIVATEMCROSS
+	+NOTARGET
+States
+{
+Spawn:
+TNT1 A 0
+        TNT1 AA 5 A_Explode(10,5)
+Stop
+ }
+}
+
+
+
+
+
+
+
+
+Actor TorchFlare
+{
++NOINTERACTION
++NOGRAVITY
++CLIENTSIDEONLY
++FORCEXYBILLBOARD
+renderstyle Add
+radius 1
+height 1
+alpha 0.4
+}
+
+Actor RedTF : TorchFlare
+{
+states
+	{
+	Spawn:
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(128,2)
+		FLAR A 2 bright
+		stop
+		TNT1 A 0
+		FLAR B 2 bright
+		stop
+    Stop
+	}
+}
+
+
+
+
+
+
+
+
+
+ACTOR RedTorchVanilla
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		TRED ABCD 2 BRIGHT
+		Loop
+	}
+}
+
+
+ACTOR BlueTorchVanilla
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		TBLU ABCD 2 BRIGHT
+		Loop
+	}
+}
+
+
+ACTOR GreenTorchVanilla
+{
+	Game Doom
+	Radius 16
+	Height 68
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		TGRN ABCD 2 BRIGHT
+		Loop
+	}
+}
+
+
+
+ACTOR ShortBlueTorchVanilla
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		SMBT ABCD 2 BRIGHT
+		Loop
+	}
+}
+
+ACTOR ShortRedTorchVanilla
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		SMRT ABCD 2 BRIGHT
+		Loop
+	}
+}
+
+
+ACTOR ShortGreenTorchVanilla
+{
+	Game Doom
+	Radius 16
+	Height 37
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		SMGT ABCD 2 BRIGHT
+		Loop
+	}
+}
+
+ACTOR CandelabraVanilla
+{
+	Game Doom
+	Radius 16
+	Height 60
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		CBRA A -1 BRIGHT
+		Stop
+	}
+}
+
+ACTOR CandleVanilla
+{
+	Game Doom
+	Radius 20
+	Height 14
+	ProjectilePassHeight -16
+	States
+	{
+	Spawn:
+		CAND A -1 BRIGHT
+		Stop
+	}
+}
+
+
+ACTOR BurningBarrelVanilla
+{
+	Game Doom
+	SpawnID 149
+	Radius 16
+	Height 32
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		FCAN ABC 2 BRIGHT
+		Loop
+	}
+}

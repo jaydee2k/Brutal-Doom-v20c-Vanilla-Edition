@@ -1,0 +1,11 @@
+//#library "commands"
+#library "nazicheck"
+#include "zcommon.acs"
+
+script 177 (void)
+{
+  int n=ThingCountName("Nazi",0);
+  if (n>10) {
+    GiveActorInventory(748, "NaziVerification1", 1);
+  }
+}
