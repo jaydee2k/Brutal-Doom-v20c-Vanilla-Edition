@@ -1,0 +1,85 @@
+clearskills
+
+skill easyhard
+{
+   AutoUseHealth
+   AmmoFactor = 3
+   DamageFactor = 0.75
+   EasyBossBrain
+   SpawnFilter = normal
+   name = "Power-Fantasy"
+}
+
+skill easy
+{
+   AmmoFactor = 1
+   DamageFactor = 1.0
+   SpawnFilter = easy
+   name = "I'm Too Young To Die"
+}
+
+skill normal
+{
+   AmmoFactor = 1
+   DamageFactor = 1.0
+   SpawnFilter = normal
+   name = "Hurt Me Plenty!"
+   defaultskill
+}
+
+
+skill Hard
+{
+   AmmoFactor = 1
+   DamageFactor = 1.0
+   SpawnFilter = Hard
+   name = "Ultra Violence"
+}
+
+skill Superbad
+{
+   AmmoFactor = 1
+   DamageFactor = 1.5
+   DisableCheats
+   SpawnFilter = Nightmare
+   name = "I am Super Bad"
+   mustconfirm = "Enemies deal 50% bonus damage. Press Y or N"
+}
+
+skill HyperHard
+{
+   AmmoFactor = 1
+   FastMonsters
+   DisableCheats
+   SpawnFilter = Nightmare
+   name = "12 in a 10 point scale of bad"
+   mustconfirm = "Much faster enemies. Press Y or N"
+}
+
+
+skill BlackMetal
+{
+   AmmoFactor = 1
+   DamageFactor = 1.5
+   FastMonsters
+   DisableCheats
+   ACSReturn = 31
+   SpawnFilter = Nightmare
+   name = "Black Metal"
+   mustconfirm = "Much faster enemies, plus 50% bonus damage. Double Ammo. Press Y or N"
+}
+
+
+skill Brutal
+{
+   DamageFactor = 9.0
+   MonsterHealth = 0.4
+   FriendlyHealth = 0.4
+   ACSReturn = 32
+   //FastMonsters
+   //DisableCheats
+   SpawnFilter = hard
+   name = "Realism Mode"
+   //ReplaceActor = "Medikit", "RealisticMedikit"
+   mustconfirm = "Do you have what it takes to survive? Press Y or N"
+}
