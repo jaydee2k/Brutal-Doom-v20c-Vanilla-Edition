@@ -38,7 +38,7 @@ ACTOR TehLostSoul: LostSoul Replaces LostSoul
 	Height 56
 	Mass 50
 	Speed 12
-	Damage (random(10,15))
+	Damage 3
 	PainChance 255
 	PainChance "Kick", 255
 	damagefactor "GibRemoving", 0.0
