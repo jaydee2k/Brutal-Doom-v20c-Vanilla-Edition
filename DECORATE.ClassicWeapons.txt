@@ -278,7 +278,6 @@ ACTOR ClassicChaingun : DoomWeapon Replaces ChainGun
 	{
 	Ready:
 	    PKCG A 1 A_WeaponReady
-		TNT1 A 0 A_TakeInventory("Minigun")
 		Loop
 	Deselect:
 		PKCG A 1 A_Lower
