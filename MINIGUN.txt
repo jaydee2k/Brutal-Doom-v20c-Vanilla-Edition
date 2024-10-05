@@ -19,7 +19,7 @@ ACTOR MiniGun : Chaingun
 Game Doom
 SpawnID 28
 Weapon.SelectionOrder 700
-Weapon.AmmoType1 "Clip2"
+Weapon.AmmoType1 "Clip"
 //Weapon.AmmoType2 "Clip2"
 Weapon.AmmoGive 30
 Weapon.AmmoUse1 1
@@ -75,13 +75,13 @@ Ready:
       CHAG A 1 A_WeaponReady
 	  TNT1 A 0 A_JumpIfInventory("TossGrenade",1,"TossGrenade")
       TNT1 A 0 A_JumpIfInventory("Spin",1,"Ready2")
-	  TNT1 A 0 A_JumpIfInventory("Clip2",1,"Idle")
+	  TNT1 A 0 A_JumpIfInventory("Clip",1,"Idle")
       Goto IdleNoAmmo
 	  
 	  IdleNoAmmo:
 	  CHAE A 1 A_WeaponReady
 	  TNT1 A 0 A_TakeInventory ("Spin",1)
-	  TNT1 A 0 A_JumpIfInventory("Clip2",1,"Idle")
+	  TNT1 A 0 A_JumpIfInventory("Clip",1,"Idle")
 	  Loop
 
 Ready2:
@@ -288,7 +288,7 @@ Fire2:
      TNT1 A 0 A_GiveInventory ("Spin",1)
      //TNT1 A 0 SetPlayerProperty(0,1,0)
       TNT1 A 0 A_PlaySound("CHAINSTA")
-	  TNT1 A 0 A_JumpIfInventory("Clip2",1,1)
+	  TNT1 A 0 A_JumpIfInventory("Clip",1,1)
 	  Goto IdleNoAmmo
      CHAG ABCD 2
      TNT1 A 0

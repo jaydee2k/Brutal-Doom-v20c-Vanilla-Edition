@@ -31,7 +31,7 @@ ACTOR DualRifles: DoomWeapon
 	Weapon.AmmoGive1 0 //How much ammo can be gathered with this weapon
 	Weapon.AmmoUse2 0
 	Weapon.AmmoGive2 0
-	Weapon.AmmoType1 "Clip2" //Reserve ammo type
+	Weapon.AmmoType1 "Clip" //Reserve ammo type
 	Weapon.AmmoType2 "DoubleRifleAmmo" //Magazine ammo type
 	Obituary "%o was drilled by %k's Double Rifles." //Kill message
     AttackSound "None" //You better leave this clear
@@ -189,15 +189,15 @@ ACTOR DualRifles: DoomWeapon
 		TNT1 A 0 A_TakeInventory("Reloading")//Always put this to make sure that the game understand that you already are reloading your weapon, and calling this state again is not necessary
 		TNT1 A 0 A_JumpIfInventory("DoubleRifleAmmo", 62, "ReadytoFire")//Checks if the weapon is not fully reloaded, if yes, cancel reload.
 		TNT1 A 0 A_PlaySound("DRYFIRE", 1)
-		TNT1 A 0 A_JumpIfInventory("Clip2", 1, 1)//Checks if you have spare ammo
+		TNT1 A 0 A_JumpIfInventory("Clip", 1, 1)//Checks if you have spare ammo
 		Goto DryFire//Identified that you have no spare ammo. Get back to Ready animation
 		TNT1 A 0 A_GiveInventory("StopDualWield", 1)
         
 	Refill:	
 	    TNT1 A 0
-		TNT1 A 0 A_JumpIfInventory("Clip2", 1, 1)//Check if you have spare ammo again. This line is necessary in case you don't have enough ammo to fill an entire clip.
+		TNT1 A 0 A_JumpIfInventory("Clip", 1, 1)//Check if you have spare ammo again. This line is necessary in case you don't have enough ammo to fill an entire clip.
 		Goto FinishReload//Gun is fully loaded. Go to finish animation
-	    TNT1 A 0 A_TakeInventorY("Clip2", 1)//Removes one spare bullet
+	    TNT1 A 0 A_TakeInventorY("Clip", 1)//Removes one spare bullet
 		TNT1 A 0 A_GiveInventory("DoubleRifleAmmo", 1)//Puts one bullet inside the clip
 		TNT1 A 0 A_JumpIfInventory("DoubleRifleAmmo", 60, "FinishReload")//Checks if weapons is full
 		Loop
@@ -238,15 +238,15 @@ ACTOR DualRifles: DoomWeapon
 	    P2SG A 1 //Always leave one free line before the reload animation to prevent bugs
 		TNT1 A 0 A_TakeInventory("Reloading")//Always put this to make sure that the game understand that you already are reloading your weapon, and calling this state again is not necessary
 		TNT1 A 0 A_JumpIfInventory("DoubleRifleAmmo", 62, "ReadytoFire")//Checks if the weapon is not fully reloaded, if yes, cancel reload.
-		TNT1 A 0 A_JumpIfInventory("Clip2", 1, 1)//Checks if you have spare ammo
+		TNT1 A 0 A_JumpIfInventory("Clip", 1, 1)//Checks if you have spare ammo
 		Goto ReadyToFire//The game identified that you have no spare ammo. Get back to Ready animation
 		TNT1 A 0 A_GiveInventory("StopDualWield", 1)
         
 	Refill2:	
 	    TNT1 A 0
-		TNT1 A 0 A_JumpIfInventory("Clip2", 1, 1)//Check if you have spare ammo again. This line is necessary in case you don't have enough ammo to fill an entire clip.
+		TNT1 A 0 A_JumpIfInventory("Clip", 1, 1)//Check if you have spare ammo again. This line is necessary in case you don't have enough ammo to fill an entire clip.
 		Goto FinishReload//Gun is fully loaded. Go to finish animation
-	    TNT1 A 0 A_TakeInventorY("Clip2", 1)//Removes one spare bullet
+	    TNT1 A 0 A_TakeInventorY("Clip", 1)//Removes one spare bullet
 		TNT1 A 0 A_GiveInventory("DoubleRifleAmmo", 1)//Puts one bullet inside the clip
 		TNT1 A 0 A_JumpIfInventory("DoubleRifleAmmo", 62, "FinishReload2")//Checks if weapons is full
 		Loop
@@ -414,7 +414,7 @@ ACTOR DualRifles: DoomWeapon
 		TNT1 A 0 A_Takeinventory("RifleAmmo",1)
 		TNT1 A 0 A_Takeinventory("DoubleRifleAmmo",1)
 		TNT1 A 0 A_Takeinventory("LeftRifleAmmo",1)
-		TNT1 A 0 A_Giveinventory("Clip2",1)
+		TNT1 A 0 A_Giveinventory("Clip",1)
 		Goto RemoveBullets
 	
 	FInishUnload:

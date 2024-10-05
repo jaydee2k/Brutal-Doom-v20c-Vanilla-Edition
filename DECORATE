@@ -86,6 +86,7 @@ damage 0
 #include KNIGHT.txt
 #include BARON.txt
 #include LOSTSOUL.txt
+#include Soul.txt
 #include SPIDERS.txt
 #include REVENANT.txt
 #include MANCUBUS.txt
@@ -94,9 +95,6 @@ damage 0
 #include ARCHVILE.txt
 #include CYBERDEMON.txt
 #include MASTERMIND.txt
-//ST Monsters
-#include BELPHEGOR.txt
-#include JUGGERNAUT.txt
 //Gore N' Blood
 #include GORE!!!.txt
 #include GORE2.txt
@@ -104,8 +102,6 @@ damage 0
 #include BLOOD.txt
 #include BLOODSPLASH.txt
 #include BURN.txt
-#include MP40.txt
-#include NAZIS.txt
 
 //MISC
 #include HEAD_SYS.txt
@@ -121,12 +117,10 @@ damage 0
 #include DROPABLES.txt
 #include PUFF.txt
 #include TRACERS.txt
-#include EEEVILLL.txt
 //#include ARACHBOX
 
 //Player Classes
 #include PLAYER.txt
-#include MARINES.txt
 #include EXTRA.txt
 
 Actor oneliner: Inventory

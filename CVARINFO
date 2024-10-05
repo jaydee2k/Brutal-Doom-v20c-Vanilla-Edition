@@ -19,6 +19,4 @@ server int zdoombd_shotgunstrap = 0;
 
 
 
-server int bd_isnazilevel = 0;
-
 server int bd_disabledecorations = 0;

@@ -3,6 +3,41 @@ Actor lowgraphicsmode : Inventory
 inventory.maxamount 1
 }
 
+actor smoothfog : teleportfog replaces teleportfog
+{
++NOTELEPORT
+states
+	{
+	spawn:
+	TNT1 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 0 a_spawnparticle(
+			/*color*/yellow, 
+			/*flags*/ +SPF_FULLBRIGHT +SPF_RELATIVE, 
+			/*lifetime*/random(28,40),
+			/*size*/random(3,8), 
+			/*angle*/ frandom(0,360),
+			/*xyz off*/ random(10,15), 0, 0,		
+			/*xyz vel*/ random(-3,5), random(-3,5), random(-2,4), 
+			/*xyz accel*/ 0, 0, 0,
+			/*start alpha*/ 1.0,
+			/*fadestep*/ -1)
+	TNT1 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 0 a_spawnparticle(
+			/*color*/green, 
+			/*flags*/ +SPF_FULLBRIGHT +SPF_RELATIVE, 
+			/*lifetime*/random(18,35),
+			/*size*/random(3,8), 
+			/*angle*/ frandom(0,360),
+			/*xyz off*/ random(10,15), 0, 0,		
+			/*xyz vel*/ random(-3,5), random(-3,5), random(-2,4), 
+			/*xyz accel*/ 0, 0, 0,
+			/*start alpha*/ 1.0,
+			/*fadestep*/ -1)
+			
+	finish:
+		SFOG abcdefghijklmnopqrstrqpo 2 bright	
+		stop
+	}
+}
+
 Actor IsOverLava : Inventory
 {
 inventory.maxamount 1

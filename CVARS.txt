@@ -1,14 +1,6 @@
 #library "CVARS"
 #include "zcommon.acs"
 
-
-
-script 647 enter
-{
-    //ClearInventory();
-    GiveInventory("CheckMarines", 1);
-}
-
 Script 799 (VOID)
 {
 

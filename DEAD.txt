@@ -1,3 +1,46 @@
+actor KillMe
+{
+	+NOTARGET
+Radius 10
+Height 10
+DamageType KillMe
++NOGRAVITY
++NOTELEPORT
++NODAMAGETHRUST
++THRUGHOST
++NORADIUSDMG
++NOEXTREMEDEATH
++FORCERADIUSDMG
+-BLOODSPLATTER
++BLOODLESSIMPACT 
+PROJECTILE
+	+DEHEXPLOSION
+	+ACTIVATEMCROSS
+States
+{
+Spawn:
+TNT1 A 0
+        TNT1 A 0 A_Explode(3,500)
+Stop
+ }
+}
+
+
+
+
+
+
+actor KillMeSmall: KillMe
+{
+States
+{
+Spawn:
+TNT1 A 0
+        TNT1 A 0 A_Explode(3,400)
+Stop
+ }
+}
+
 actor VeryDeadMarine: DeadMarine Replaces DeadMarine
 {
 damagefactor "Avoid", 0.0
@@ -536,7 +579,7 @@ ACTOR DeadBloodyTwitch: BloodyTwitch Replaces BloodyTwitch
     Spawn:
 		GOR1 A 1
 		TNT1 A 0 Thing_ChangeTID(0,728)
-		MARN A 0 ACS_ExecuteAlways(177, 0, 0, 0, 0)//Check if you are playing on an TVR!
+		//MARN A 0 ACS_ExecuteAlways(177, 0, 0, 0, 0)//Check if you are playing on an TVR!
         Goto Stand
 	Stand:
 		GOR1 A 10

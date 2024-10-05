@@ -142,9 +142,7 @@ ACTOR Rocket_Launcher : RocketLauncher
 	Spawn:
 		TNT1 A 0
 		LAUN A 0 Thing_ChangeTID(0,748)
-		TNT1 A 3 ACS_ExecuteAlways(177, 0, 0, 0, 0)
 		LAUN A 0
-		TNT1 A 0 A_JumpIfInventory("NaziVerification1", 1, "ISHeretic")
 		Goto Spawn2
 
 	ISHeretic:

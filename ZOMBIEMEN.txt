@@ -47,7 +47,7 @@ ACTOR Zombie_Man: ZombieMan Replaces ZombieMan
 	DeathSound "grunt/death"
 	ActiveSound "grunt/active"
 	Obituary "$OB_ZOMBIE"
-	DropItem "Clip2"
+	DropItem "Clip"
 	States
 	{
 	Spawn:

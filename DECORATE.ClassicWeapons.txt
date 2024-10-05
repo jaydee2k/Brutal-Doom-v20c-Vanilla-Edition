@@ -119,7 +119,7 @@ ACTOR ClassicPistol : DoomWeapon Replaces Pistol
 	Game Doom
 	Weapon.AmmoUse 1
 	Weapon.AmmoGive 20
-	Weapon.AmmoType "Clip2"
+	Weapon.AmmoType "Clip"
 	Obituary "$OB_MPPISTOL"
 	+WEAPON.NOAUTOFIRE
 	+WEAPON.NOAUTOAIM
@@ -269,7 +269,7 @@ ACTOR ClassicChaingun : DoomWeapon Replaces ChainGun
 	Game Doom
 	Weapon.AmmoUse 1
 	Weapon.AmmoGive 20
-	Weapon.AmmoType "Clip2"
+	Weapon.AmmoType "Clip"
 	Inventory.PickupMessage "$GOTCHAINGUN"
 	Obituary "$OB_MPCHAINGUN"
 	+WEAPON.NOAUTOAIM

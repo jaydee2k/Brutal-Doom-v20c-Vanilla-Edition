@@ -244,25 +244,10 @@ ACTOR BIG_FUCKING_GUN : BFG9000
 	Spawn:	
 		TNT1 A 0
 		BFUG A 0 Thing_ChangeTID(0,748)
-		TNT1 A 3 ACS_ExecuteAlways(177, 0, 0, 0, 0)
 		BFUG A 0
 		//TNT1 A 0 A_JumpIfInventory("NaziVerification1", 1, "VerificateNazi")
 		//Goto Spawn2
 		
-	VerificateNazi:
-		TNT1 A 1
-		TNT1 A 0 A_JumpIfInventory("NaziVerification1", 1, "IsANazi")
-		Goto Spawn2
-			
-	ISANazi:
-		TNT1 A 0
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
-		TNT1 A 0 A_ChangeFlag("NOTARGET", 1)
-		TNT1 A 0 A_ChangeFlag("NOBLOCKMAP", 1)
-		TNT1 A 0 A_SpawnItemEx("HitlersBuzzsaw", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERPOINTERS | SXF_TRANSFERAMBUSHFLAG)
-		Stop
-	
 	Spawn2:
 		BFUG A -1
 		Stop	

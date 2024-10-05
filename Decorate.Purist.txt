@@ -10,7 +10,7 @@ ACTOR Purist : Doomer
 	Player.DisplayName "Classic"
 	Player.StartItem "ClassicPistol"
 	Player.StartItem "ClassicFist"
-	Player.StartItem "Clip2", 50
+	Player.StartItem "Clip", 50
 	player.viewheight	44
     player.attackzoffset 16
 	damagefactor "Head", 0.0
