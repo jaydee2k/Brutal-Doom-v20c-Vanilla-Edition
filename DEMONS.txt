@@ -613,15 +613,6 @@ Goto Spawn
 		SARK B 10 A_Look
 
 		Goto MeleeDown
-		
-		
-	Death.Ice:
-	Death.Freeze:
-	Death.Frost:
-	TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
-	TNT1 A 0 A_ChangeFlag("SOLID", 0)
-	TNT1 A 0 A_SpawnItem("FrozenDemon")
-	Stop	
 	
 	Death.Massacre:
 	Goto Death

@@ -89,11 +89,6 @@ ACTOR Medikit2 : Health Replaces Medikit
         MEDI A 1
 		MEDI A -1
 		Stop	
-	BecomeRealistic:
-		TNT1 A 0
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_SpawnItem("RealisticMedikit")
-		Stop
 	}
 }
 

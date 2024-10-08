@@ -393,14 +393,6 @@ Goto See
 	    TNT1 A 0 A_ChangeFlag("SOLID", 0)
         TNT1 A 0 A_SpawnItem("BaronOfHell")
         Stop
-		
-	Death.Ice:
-	Death.Freeze:
-	Death.Frost:
-	TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
-	TNT1 A 0 A_ChangeFlag("SOLID", 0)
-	TNT1 A 0 A_SpawnItem("FrozenBaronOfHell")
-	Stop	
 	
 	Death.Massacre:
 	Goto Death
