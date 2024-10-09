@@ -1550,9 +1550,8 @@ Death.Plasma: Death.Plasma2:
 
 	Pain.BlueBlood:
         NULL A 0 A_Giveinventory("BlueBloodOnVisor",1)
-        NULL A 0 A_Giveinventory("GiveHealth",1)
-  NULL A 0 A_Jump(255,"BBled1","BBled2","BBled3","BBled4","BBled5","BBled6")
-  Goto BBled1
+        NULL A 0 A_Jump(255,"BBled1","BBled2","BBled3","BBled4","BBled5","BBled6")
+		Goto BBled1
         BBled1:
         NULL A 0 ACS_Execute(570, 0, 0, 0, 0)
          Goto StandStill
@@ -1574,9 +1573,8 @@ Death.Plasma: Death.Plasma2:
 
 	Pain.GreenBlood:
         NULL A 0 A_Giveinventory("GreenBloodOnVisor",1)
-        NULL A 0 A_Giveinventory("GiveHealth",1)
-  NULL A 0 A_Jump(255,"GBled1","GBled2","GBled3","GBled4","GBled5","GBled6")
-  Goto Bled1
+        NULL A 0 A_Jump(255,"GBled1","GBled2","GBled3","GBled4","GBled5","GBled6")
+		Goto Bled1
 
         GBled1:
         NULL A 0 ACS_Execute(560, 0, 0, 0, 0)
