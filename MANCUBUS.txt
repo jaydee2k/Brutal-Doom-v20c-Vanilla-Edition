@@ -39,8 +39,7 @@ States
 
     Death.minorhead:
     Death.head:
-		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon", 1, "Death.Plasma")
-	TNT1 A 0 A_SpawnItem("BloodSplasher2")
+		TNT1 A 0 A_SpawnItem("BloodSplasher2")
 		TNT1 AAAAAA 0 A_CustomMissile ("Xdeath1", 62, 0, random (0, 360), 2, random (0, 160))
 		TNT1 AAAA 0 A_CustomMissile ("Brains1", 62, 0, random (0, 360), 2, random (0, 160))
 		TNT1 AA 0 A_CustomMissile ("Brains2", 62, 0, random (0, 360), 2, random (0, 160))

@@ -174,7 +174,6 @@ Goto Death
 		
 
 	Death.head:
-		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon", 1, "Death.Plasma")
 		TNT1 A 0 A_SpawnItem("BaronOfHellHeadExplode", 0, 62)
         BADH A 9
         BADH B 9

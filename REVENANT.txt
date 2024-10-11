@@ -258,7 +258,6 @@ FatalityImp:
     
     Death.Minorhead:
     Death.Head:
-		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon", 1, "Death.Plasma")
 		TNT1 AAAAA 0 A_CustomMissile ("Xdeath1", 72, 0, random (0, 360), 2, random (0, 160))
         TNT1 AAAA 0 A_CustomMissile ("SmallLSPart1", 70, 0, random (0, 360), 2, random (0, 360))
 		TNT1 AAAA 0 A_CustomMissile ("SmallLSPart3", 70, 0, random (0, 360), 2, random (0, 360))

@@ -5,7 +5,7 @@ ACTOR ClassicFist : Weapon Replaces Fist
 	Obituary "$OB_MPFIST"
 	Tag "$TAG_FIST"
 	+WEAPON.MELEEWEAPON
-	+WEAPON.NOALERT
+	+WEAPON.WIMPY_WEAPON
 	+WEAPON.NOAUTOAIM
 	States
 	{

@@ -313,19 +313,6 @@ object TallTorch_Blue
     frame TTRB { light BIGBLUETORCH }
 }
 
-object Plasma_Ball
-{
-    frame TNT1 { light PLASMABALL }
-    frame PBAL { light PLASMABALLSMALL }
-}
-
-
-object EnemyPlasmaBall
-{
-    frame TNT1 { light PLASMABALL }
-    frame PBAL { light PLASMABALLSMALL }
-}
-
 // Small red torch
 pulselight SMALLREDTORCH
 {

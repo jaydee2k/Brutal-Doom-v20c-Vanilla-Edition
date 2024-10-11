@@ -771,38 +771,6 @@ var int user_sgverticalspread;
 		TNT1 A 0 A_GiveInventory("ImpactMovesSling", 1)
 		MARN AAA 1 A_SetPitch(-1.0 + pitch)
 		Goto StandStill
-		
-		
-   Kick:
-		NULL A 0 A_TakeInventory("KickHasHit",1)
-        NULL A 0 A_JumpIf (momZ > 0, "AirKick")
-		NULL A 0 A_JumpIf (momZ < 0, "AirKick")
-		NULL A 0 A_TakeInventory("KickHasHit",1)
-        PKIK AB 3 A_JumpIfInventory("GoFatality", 1, "FatalityChecker")
-		PKIK CB 3 A_JumpIfInventory("KickHasHit", 1, "KickHit")
-        NULL A 0 A_TakeInventory("Kicking",1)
-        Goto StandStill
-   RifleKick:
-		NULL A 0 A_TakeInventory("KickHasHit",1)
-        NULL A 0 A_JumpIf (momZ > 0, "AirKick")
-		NULL A 0 A_JumpIf (momZ < 0, "AirKick")
-		NULL A 0 A_TakeInventory("KickHasHit",1)
-        PKI1 AB 3 A_JumpIfInventory("GoFatality", 1, "FatalityChecker")
-		PKI1 CB 3 A_JumpIfInventory("KickHasHit", 1, "KickHit")
-        NULL A 0 A_TakeInventory("Kicking",1)
-        Goto StandStill	
-		
-	AirKick:
-	    AKIK AAAAA 2 A_JumpIfInventory("KickHasHit", 1, "KickHit")
-		NULL A 0 A_TakeInventory("Kicking",1)
-		Goto StandStill
-		
-	KickHit:
-		TNT1 A 0 A_Stop
-		NULL A 0 A_TakeInventory("Kicking",1)
-		NULL A 0 A_TakeInventory("KickHasHit",1)
-		TNT1 A 0 A_Recoil(3)
-		Goto StandStill
 	
     Punch:
         PLA1 H 1
@@ -817,65 +785,6 @@ var int user_sgverticalspread;
 		NULL A 0 A_JumpIfInventory("GoSpecial", 1, "SpecialChecker")
         
 		Goto StandStill
-		
-	SayOneLiner:
-		MARN A 1
-		NULL A 0 A_PlaySound("ONELIN", 2)
-		NULL A 0 A_TakeInventory("oneliner", 1)
-		Goto StandStill
-	
-	AdvancedTaunt:
-		MARN A 1
-		NULL A 0 A_PlaySound("TAUNT0", 2)
-		NULL A 0 A_TakeInventory("advtaunting", 1)
-		Goto StandStill
-	
-	FistTaunt:
-		NULL A 0
-		NULL A 0 A_PlaySound("MTAUN", 2)
-		NULL A 0 A_TakeInventory("advtaunting", 1)
-		Goto StandStill
-	
-	
-	RollRight:
-		NULL A 0 A_TakeInventory("RollLeft")
-		NULL A 0 A_TakeInventory("RollRight")
-		NULL A 0 A_ChangeFlag ("NOPAIN", 1)
-	
-		NULL A 0 ACS_ExecuteAlways(477, 0, 0, 0, 0)//Start Camera//Start Camera
-		NULL A 0 ThrustThing(angle*256/360+192,20,0,0)//Thrust Right
-		PROL EDCBA 4
-		MARN A 0 ACS_ExecuteAlways(171, 0, 0, 0, 0)//Disable Camera.
-		NULL A 0 A_JumpIfInventory("GoFatality", 1, "FatalityChecker")
-        NULL A 0 A_JumpIfInventory("GoSpecial", 1, "SpecialChecker")
-		MARN A 4
-	
-		NULL A 0 A_ChangeFlag ("NOPAIN", 0)
-		NULL A 0 A_TakeInventory("RollLeft")
-		NULL A 0 A_TakeInventory("RollRight")
-		TNT1 A 0 A_GiveInventory("ImpactMovesSling", 1)
-		Goto StandStill
-	
-	RollLeft:
-		NULL A 0 A_TakeInventory("RollLeft")
-		NULL A 0 A_TakeInventory("RollRight")
-		NULL A 0 A_ChangeFlag ("NOPAIN", 1)
-	
-		NULL A 0 ACS_ExecuteAlways(477, 0, 0, 0, 0)//Start Camera//Start Camera
-		NULL A 0 ThrustThing(angle*256/360+64,20,0,0)//Thrust Left
-		PROL ABCDE 4
-		MARN A 0 ACS_ExecuteAlways(171, 0, 0, 0, 0)//Disable Camera.
-		NULL A 0 A_JumpIfInventory("GoFatality", 1, "FatalityChecker")
-        NULL A 0 A_JumpIfInventory("GoSpecial", 1, "SpecialChecker")
-		MARN A 4
-	
-		NULL A 0 A_ChangeFlag ("NOPAIN", 0)
-		NULL A 0 A_TakeInventory("RollLeft")
-		NULL A 0 A_TakeInventory("RollRight")
-		TNT1 A 0 A_GiveInventory("ImpactMovesSling", 1)
-		
-		Goto StandStill	
-		
 	
 	Pump:
 	    PLAY ABCD 4

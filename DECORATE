@@ -67,8 +67,6 @@ damage 0
 #include MINIGUN.txt
 #include ROCKETLAUNCHER.txt
 #include EXPLOSIVES.txt
-#include PLASMA.txt
-#include DUALPLASMA.txt
 #include BFG.txt
 
 //MeatShields
