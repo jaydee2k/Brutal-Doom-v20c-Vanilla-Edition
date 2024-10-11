@@ -30,6 +30,8 @@ Update 1.01
 -Bullet ammo now has vanilla values
 -New smooth Lost Soul and Teleportfog (credits Gifty)
 -Restored vanilla difficulty settings including one custom setting
+-Removed cruelty bonusses
+-Removed last stand for Zombieman and Sergeant
 
 "Hurt me... I guess."
 

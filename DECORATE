@@ -64,8 +64,6 @@ damage 0
 #include RIFLE.txt
 #include DUALRIFLE.txt
 #include SHOTGUN.txt
-#include MINIGUN.txt
-#include ROCKETLAUNCHER.txt
 #include EXPLOSIVES.txt
 #include BFG.txt
 
