@@ -24,24 +24,6 @@ But yeah, there are some minor differences for the sake of keeping all gore effe
 
 You can say I took one step further than bdlite gameplaywise and one step back in keeping every gore effect in.
 
-Update 1.01
-
--Code cleanup and various tweaks and fixes
--Bullet ammo now has vanilla values
--New smooth Lost Soul and Teleportfog (credits Gifty)
--Restored vanilla difficulty settings including one custom setting
--Removed cruelty bonusses
--Removed last stand for Zombieman and Sergeant
-
-"Hurt me... I guess."
-
-   AmmoFactor = 3
-   DamageFactor = 0.75
-   EasyBossBrain
-   SpawnFilter = normal
-
-Added when anybody just wants to have a little fun.
-
 Vanilla Edition by
 
 jaydee2k (me)
