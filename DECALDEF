@@ -123,12 +123,6 @@ BrutalBloodSuper01 6
 BrutalBloodSuper02 6
 }
 
-
-generator PhoenixShot			Scorch
-generator PhoenixFlame			Scorch
-generator PhoenixFlame2			Scorch
-
-
 decal BlueBrutalBloodSmear1
 {
 	pic BBPLNEW4

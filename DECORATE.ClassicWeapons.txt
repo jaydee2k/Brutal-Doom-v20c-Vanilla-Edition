@@ -36,8 +36,83 @@ ACTOR ClassicFist : Weapon Replaces Fist
 	}
 }
 
+ACTOR KickAttack: FastProjectile
+{
+	Radius 18
+	Height 6
+	DamageType Kick
+	Projectile 
+	+FORCEXYBILLBOARD
+	+NOEXTREMEDEATH
+	RenderStyle Add
+	Alpha 0.6
+    Damage (random(28,32))
+    Speed 30
+	//HitObituary "$OB_IMPHIT"
+	SeeSound "none"
+	DeathSound "none"
+	Decal "none"
+	States
+	{
+	Spawn:
+		TNT1 A 1 BRIGHT
+        TNT1 A 1 //A_PlaySound("weapons/gswing")
+		Stop
+	Death:
+	XDEath:
+			TNT1 A 0
+			TNT1 A 0 A_CheckFloor("DeathOnGround")
+		    PUFF A 0 A_PlaySound("player/cyborg/fist", 3)
+			TNT1 A 0 A_SpawnItemEx ("PLOFT2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+			EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
+			TNT1 A 0 Radius_Quake (2, 6, 0, 5, 0)//(intensity, duration, damrad, tremrad, tid)
+			
+			TNT1 A 10
+		Stop
+	
+	DeathOnGround:
+			TNT1 A 0
+		    PUFF A 0 A_PlaySound("player/cyborg/fist", 3)
+			TNT1 A 0 A_SpawnItemEx ("PLOFT2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+			EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
+			TNT1 A 0 Radius_Quake (2, 6, 0, 5, 0)//(intensity, duration, damrad, tremrad, tid)
+			TNT1 A 0 A_Explode(10, 40, 0)
+			TNT1 A 10
+		Stop
+	}
+}
 
+ACTOR MeleeStrike1: KickAttack
+{
+DamageType Melee
+Damage (random(10,15))
+Speed 30
+States
+{
+	Spawn:
+		TNT1 A 1 BRIGHT
+		Stop
+	Death:
+	    TNT1 A 0
+		PUFF A 0 A_PlaySound("player/cyborg/fist")
+		EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
+		TNT1 A 10
+		Stop
+}
+}
 
+ACTOR MeleeStrike2: MeleeStrike1
+{
+Damage (random(24,32))
+Speed 40
+}
+
+ACTOR MeleeStrike2Smash: MeleeStrike1
+{
+Damage (random(58,64))
+Speed 40
+DamageType Extremepunches
+}
 
 ACTOR ClassicSaw : Weapon Replaces ChainSaw
 {
@@ -112,7 +187,6 @@ ACTOR ClassicSaw : Weapon Replaces ChainSaw
 		Stop
 	}
 }
-
 
 ACTOR ClassicPistol : DoomWeapon Replaces Pistol
 {
@@ -476,4 +550,215 @@ ACTOR VanillaBFG9000 : DoomWeapon Replaces BFG9000
         TNT1 A 0  A_Refire
 		Goto Ready
 	}
+}
+
+Actor SuperBFGBall : BFGBall Replaces BFGBall
+{
+    +EXTREMEDEATH
+	Damage 100
+  Decal BFGLightning
+	DeathSound "BFGEXPLO"
+    DamageType Desintegrate
+	Scale 0.7
+	Species "Marines"
+	+THRUSPECIES
+	+MTHRUSPECIES
+  States
+  {
+  DM:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFLag("THRUSPECIES", 0)
+		TNT1 A 0 A_ChangeFLag("MTHRUSPECIES", 0)
+		Goto Spawn1
+	
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_ExecuteAlways(719, 0, 0, 0, 0)//Check if Coop
+
+	Spawn1:
+    TNT1 A 0 A_SpawnItemEx("BFGFOG", 0, 0)
+    BFS1 A 1 BRIGHT A_SpawnItem("GreenFlareMedium",0,0)
+    BFS1 A 1 BRIGHT A_SpawnItemEx("BFGTrailParticle", Random(-13, 13), Random(-13, 13), Random(0, 18), Random(1, 3), 0, (0.1)*Random(-10, 10), Random(-20, 20), 128)
+    TNT1 A 0 A_SpawnItemEx("BFGFOG", 0, 0)
+    BFS1 B 1 BRIGHT A_SpawnItem("GreenFlareMedium",0,0)
+    BFS1 B 1 BRIGHT A_SpawnItemEx("BFGTrailParticle", Random(-13, 13), Random(-13, 13), Random(0, 18), Random(1, 3), 0, (0.1)*Random(-10, 10), Random(-20, 20), 128)
+    Loop
+ 
+ Death:
+    TNT1 A 0
+    //TNT1 A 0 Radius_Quake(4,34,0,12,0)
+	
+	TNT1 A 0 Bright A_SpawnItem("GreenShockWave",0,0,0)
+    //BFE1 A 0 A_SpawnItemEx("BFGDeathParticleSpawner", 0, 0, 0, 0, 0, 0, 0, 128)
+    //BFE1 A 0 A_SpawnItemEx("BFGSuperParticleSpawner", 0, 0, 0, 0, 0, 0, 0, 128)
+	EXPL AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile ("BFGBIGFOG", 0, 0, random (0, 360), 2, random (0, 360))
+	EXPL AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile ("BFGDeathParticleFast", 0, 0, random (0, 360), 2, random (0, 360))
+	EXPL AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile ("BFGDeathParticleSuperFast", 0, 0, random (0, 360), 2, random (0, 360))
+	EXPL AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile ("BFGDeathParticleFast", 0, 0, random (0, 360), 2, random (0, 360))
+	EXPL AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile ("BFGDeathParticleFast", 0, 0, random (0, 360), 2, random (0, 360))
+    TNT1 A 0 A_SpawnItem("MegaGibRemoving")
+	//TNT1 A 0 A_Explode(80,300,0)
+	BFGB ABCDE 1 Bright A_SpawnItem("GreenFlare",0,0)
+    BFGB F 1 Bright A_BFGSpray//("SuperBFGExtra")
+	TNT1 A 0 A_SPawnItem("SuperBFGExtraGiant")
+    BFGB GHIJK 1 Bright A_SpawnItem("GreenFlare",0,0)
+    Stop
+  }
+}
+
+Actor BFGTrailParticle
+{
+  Height 0
+  Radius 0
+  Mass 0
+  Speed 3
+  +Missile
+  +NoBlockMap
+  +NoGravity
+  +DontSplash
+  RenderStyle Add
+  Scale 0.05
+  States
+  {
+  Spawn:
+    SPKG A 2 Bright A_FadeOut(0.02)
+    Loop
+  }
+}
+
+Actor SuperBFGExtra : BFGExtra Replaces BFGExtra
+{
+  +NoBlockMap
+  +NoGravity
+  RenderStyle Add
+  +FORCERADIUSDMG
+  +THRUGHOST
+  Alpha 0.75
+  Damage 0
+  Scale 0.6
+  Radius 1
+  Height 1
+  DamageType "Desintegrate"
+  States
+  {
+  Spawn:
+    BFE2 A 0
+	TNT1 A 0 A_Explode(40, 3)
+    TNT1 AAAAA 0 A_SpawnItemEx("BFGExtraParticle", 0, 0, 14, (0.1)*Random(10, 40), 0, (0.1)*Random(-40, 40), Random(0, 360), 128)
+    TNT1 AAAAA 0 A_SpawnItemEx("BFGExtraParticle", 0, 0, 14, (0.1)*Random(10, 40), 0, (0.1)*Random(-40, 40), Random(0, 360), 128)
+    TNT1 AAAAA 0 A_SpawnItemEx("BFGExtraParticle", 0, 0, 14, (0.1)*Random(10, 40), 0, (0.1)*Random(-40, 40), Random(0, 360), 128)
+	BFGB ABCDEFGHIJK 2 Bright A_SpawnItem("GreenFlareMedium",0,0)
+    stop
+  }
+}
+
+Actor SuperBFGExtraGiant : SuperBFGExtra
+{
+  Scale 2.9
+  States
+  {
+  Spawn:
+    BFE2 A 0
+    BFGB ABCDEFGHIJK 2 Bright A_SpawnItem("GreenFlareMedium",0,0)
+	Stop
+  }
+}
+
+Actor BFGDeathParticle
+{
+  Height 0
+  Radius 0
+  Mass 0
+  +Missile
+  +NoBlockMap
+  -NoGravity
+  +LowGravity
+  +DontSplash
+  +DoomBounce
+  BounceFactor 0.5
+  RenderStyle Add
+  Scale 0.04
+  States
+  {
+  Spawn:
+  Death:
+    SPKG A 2 Bright A_FadeOut(0.02)
+    Loop
+  }
+}
+
+Actor BFGDeathParticleFast: BFGDeathParticle
+{
+  Speed 10
+  Scale 0.1
+  States
+  {
+  Spawn:
+  Death:
+	SPKG A 11 BRIGHT
+    SPKG AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2 Bright A_FadeOut(0.06)
+    Stop
+  }
+}
+
+Actor BFGDeathParticleSuperFast: BFGDeathParticleFast
+{
+  Speed 20
+}
+
+Actor BFGExtraParticle
+{
+  Height 0
+  Radius 0
+  Mass 0
+  +Missile
+  +NoBlockMap
+  +DontSplash
+  +NoInteraction
+  RenderStyle Add
+  Scale 0.035
+  States
+  {
+  Spawn:
+  Death:
+    SPKG A 2 Bright A_FadeOut(0.1)
+    Loop
+  }
+}
+
+ACTOR BFGFOG
+{
+    Radius 1
+    Height 1
+	Alpha 0.7
+	RenderStyle Add
+	Scale 0.4
+	Speed 8
+	Gravity 0
+    +NOBLOCKMAP
+    +NOTELEPORT
+    +DONTSPLASH
+	+MISSILE
+	+FORCEXYBILLBOARD
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        BFOG ABCDEF 6 BRIGHT A_SpawnItem("GreenFlareMedium",0,0)
+        Goto Death
+	Death:
+	    BFOG G 3 BRIGHT A_SpawnItem("GreenFlareMedium",0,0)
+		Stop
+    }
+}
+
+ACTOR BFGBIGFOG: BFGFOG
+{
+	Scale 0.8
+}
+
+ACTOR SmallGreenFog: BFGFOG
+{
+	Speed 3
+	Scale 0.5
 }

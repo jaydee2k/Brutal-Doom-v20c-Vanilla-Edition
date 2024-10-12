@@ -712,8 +712,6 @@ ACTOR Zombie_Man: ZombieMan Replaces ZombieMan
 
 	Death.HeadExplode:
         TNT1 A 0 A_PlaySound("misc/xdeath4")
-		TNT1 A 0 A_JumpIfInTargetInventory("HeavyStrikeUpward", 1, "HeavyHead")
-		//TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_SpawnItem("ZombiemanHeadExplode", 0, 40)
   	    ZMAD B 0 A_XScream
 		TNT1 A 0 A_SpawnItem("BloodSplasher2")
@@ -864,9 +862,6 @@ ACTOR Zombie_Man: ZombieMan Replaces ZombieMan
       Death.SuperPunch:
 	  Death.ExtremePunches:
 		 TNT1 A 0
-		 TNT1 A 0 A_JumpIfInTargetInventory("HeavyStrikeRight", 1, "HeavyPunchRight")
-		 TNT1 A 0 A_JumpIfInTargetInventory("HeavyStrikeLeft", 1, "HeavyPunchLeft") 
-		 //TNT1 A 0 A_JumpIfInTargetInventory("HeavyStrikeUpper", 1, "HeavyPunchUpper")
 		 TNT1 A 0 ThrustThingZ(0,45,0,1)
 		 Goto Death.SSG
 		 

@@ -499,7 +499,6 @@ GotoStealthKill:
 	Death.headExplode:
         
 		TNT1 A 0 A_XScream
-		TNT1 A 0 A_JumpIfInTargetInventory("HeavyStrikeUpward", 1, "HeavyHead")
 		TNT1 A 0 A_SpawnItem("ShotgunguyHeadExplode", 0, 50)
 		TNT1 A 0 A_NoBlocking
         SPDH AAAAABBBBBBBBBBCCCCC 2 A_CustomMissile ("Brutal_LiquidBlood2", 30, 0, random (0, 360), 2, random (60, 120))
@@ -692,9 +691,6 @@ GotoStealthKill:
 	 Death.SuperPunch:
 	  Death.ExtremePunches:
 		 TNT1 A 0
-		 TNT1 A 0 A_JumpIfInTargetInventory("HeavyStrikeRight", 1, "HeavyPunchRight")
-		 TNT1 A 0 A_JumpIfInTargetInventory("HeavyStrikeLeft", 1, "HeavyPunchLeft") 
-		 //TNT1 A 0 A_JumpIfInTargetInventory("HeavyStrikeUpper", 1, "HeavyPunchUpper")
 		 TNT1 A 0 ThrustThingZ(0,45,0,1)
 		 Goto Death.SSG
 		 

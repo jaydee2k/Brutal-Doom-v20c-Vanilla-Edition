@@ -24,21 +24,6 @@ object SuperBFGBall
 	frame BFE1E { light BFGEXPLO }
 }
 
-object FriendlyBFGBAll
-{
-    frame BFS1A { light BFGBALL }
-    frame BFS1B { light BFGBALL }
-
-    frame BFE1A { light BFGEXPLO }
-    frame BFE1B { light BFGEXPLO }
-	frame BFE1C { light BFGEXPLO }
-	frame BFE1D { light BFGEXPLO }
-	frame BFE1E { light BFGEXPLO }
-}
-
-
-
-
 flickerlight BFGEXPLO
 {
     color 0.1 1.0 0.0
@@ -1248,33 +1233,6 @@ object BurnParticles
 {
 frame TNT1 { light BIGREDTORCH }
 }
-
-
-
-object FlashlightProjectile
-{
-frame TNT2 { light Flashlight2 }
-frame TNT2 { light Flashlight3 }
-}
-
-
-
-object FlashlightProjectile2
-{
-frame TNT2 { light Flashlight1 }
-}
-
-object FlashlightProjectile3
-{
-frame TNT2 { light Flashlight3 }
-}
-
-object FlashlightSource
-{
-frame TNT1 { light Flashlight3 }
-}
-
-
 
 pointlight Flashlight1
 {

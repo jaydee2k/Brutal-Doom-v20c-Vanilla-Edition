@@ -232,9 +232,6 @@ ACTOR BullDemon: Demon Replaces Demon
 	 Death.SuperPunch:
 	  Death.ExtremePunches:
 		 TNT1 A 0
-		 TNT1 A 0 A_JumpIfInTargetInventory("HeavyStrikeRight", 1, "HeavyPunchRight")
-		 TNT1 A 0 A_JumpIfInTargetInventory("HeavyStrikeLeft", 1, "HeavyPunchLeft") 
-		 //TNT1 A 0 A_JumpIfInTargetInventory("HeavyStrikeUpper", 1, "HeavyPunchUpper")
 		 TNT1 A 0 ThrustThingZ(0,45,0,1)
 		 Goto Death.SSG
 		 

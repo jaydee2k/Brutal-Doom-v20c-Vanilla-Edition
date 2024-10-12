@@ -1,6 +1,22 @@
 
 // IF YOU WANT TO USE STUFF FROM THIS MOD, GIVE ME CREDITS
 
+Actor Punching : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor IsInvisible : Inventory
+{
+inventory.maxamount 1
+}
+
+
+Actor IsFiring : Inventory
+{
+inventory.maxamount 1
+}
+
 Actor SawSelected: Inventory
 {
 inventory.maxamount 1
@@ -60,17 +76,7 @@ damage 0
 
 
 //Guns Guns Guns
-#include MELEE.txt
-#include RIFLE.txt
-#include DUALRIFLE.txt
-#include SHOTGUN.txt
 #include EXPLOSIVES.txt
-#include BFG.txt
-
-//MeatShields
-#include IMPSHIELD.txt
-#include ZMANSHIELD.txt
-#include SGUYSHIELD.txt
 
 //DECORATIONS
 #include FURNITURE.txt
@@ -118,7 +124,6 @@ damage 0
 #include ARTIFACT.txt
 #include HEALTH2.txt
 #include BOSSBOX.txt
-#include DROPABLES.txt
 #include PUFF.txt
 #include TRACERS.txt
 //#include ARACHBOX
