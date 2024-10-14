@@ -32,11 +32,6 @@ Actor HasClassicSaw: Inventory
 inventory.maxamount 1
 }
 
-Actor EnemyMemory : Inventory
-{
-inventory.maxamount 60
-}
-
 Actor CantFire : Inventory
 {
 inventory.maxamount 1
@@ -132,21 +127,6 @@ damage 0
 #include PLAYER.txt
 #include EXTRA.txt
 
-Actor oneliner: Inventory
-{
-inventory.maxamount 1
-}
-
-
-
-
-
-Actor advtaunting: Inventory
-{
-inventory.maxamount 1
-}
-
-
 
 Actor FistsSelected: Inventory
 {
@@ -195,25 +175,8 @@ Actor BFGSelected: Inventory
 inventory.maxamount 1
 }
 
-Actor BFG10KSelected: Inventory
-{
-inventory.maxamount 1
-}
-
 
 Actor SubMachineGunSelected: Inventory
-{
-inventory.maxamount 1
-}
-
-
-Actor FlameCannonSelected: Inventory
-{
-inventory.maxamount 1
-}
-
-
-Actor RevenantLauncherSelected: Inventory
 {
 inventory.maxamount 1
 }

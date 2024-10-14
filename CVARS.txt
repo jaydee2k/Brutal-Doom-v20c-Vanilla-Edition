@@ -78,6 +78,4 @@ Script 728 (VOID)
 {
 if	(GetCvar("bd_nobulletpenetration") == 0) { TakeInventory("nopenetration", 1);}
 if	(GetCvar("bd_nobulletpenetration") == 1) { GiveInventory("nopenetration", 1);}
-if	(GetCvar("bd_shotgunstrap") == 1) { GiveInventory("useshotgunstrap", 1);}
-if	(GetCvar("zdoombd_shotgunstrap") == 1) { GiveInventory("useshotgunstrap", 1);}
 }

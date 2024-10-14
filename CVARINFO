@@ -14,9 +14,5 @@ server int isrunningzandronum = 1;
 
 server int bd_nobulletpenetration = 1;
 
-user int bd_shotgunstrap = 0;
-server int zdoombd_shotgunstrap = 0;
-
-
 
 server int bd_disabledecorations = 0;

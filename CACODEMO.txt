@@ -24,23 +24,6 @@ ACTOR Cacodemon_ : Cacodemon Replaces Cacodemon
 	bloodtype "Blue_Blood", "BlueSawBlood"
 	States
 	{
-	
-	Pain.Avoid: 
-	  TNT1 A 0
-	  TNT1 A 0 A_Jump(255, "AvoidLeft", "AvoidRight")
-	  Goto AvoidLeft
-	  
-	  AvoidLeft:
-	    HEAD A 1 A_FaceTarget
-	    TNT1 A 0 ThrustThing(angle*256/360+192, 15, 0, 0)
-        HEAD A 5 A_FaceTarget
-        Goto Missile
-	AvoidRight:
-	    HEAD A 1 A_FaceTarget
-	    TNT1 A 0 ThrustThing(angle*256/360+64, 15, 0, 0)
-        HEAD A 5 A_FaceTarget
-        Goto Missile
-
 	Spawn:
 		HEAD A 10 A_Look
 		Loop
@@ -56,32 +39,12 @@ ACTOR Cacodemon_ : Cacodemon Replaces Cacodemon
 		HEAD E 3 A_Pain
 		HEAD F 6
 		Goto See
-	Pain.Kick:
-		HEAD E 3
-		HEAD E 3 A_Pain
-		HEAD F 6
-		Goto See
 	Pain.HeavyImpact:
         TNT1 A 0 A_FaceTarget
 		HEAD E 6 A_Recoil(5)
 		HEAD E 6 A_Pain
 		HEAD F 10
 		Goto See
-	Avoid:
-         NULL A 0 A_FaceTarget
-         HEAD A 6 A_FastChase
-         NULL A 0 A_FaceTarget
-         HEAD A 6 A_FastChase
-         NULL A 0 A_FaceTarget
-         HEAD A 6 A_FastChase
-         NULL A 0 A_FaceTarget
-         HEAD A 6 A_FastChase
-
-		HEAD B 5 A_FaceTarget
-		HEAD C 5 A_FaceTarget
-		HEAD D 5 BRIGHT A_HeadAttack
-		 Goto See
-
     Death.Shotgun:
 	TNT1 A 0
 	TNT1 A 0 A_JumpIfCloser(500, "Death.Brutal")
@@ -107,21 +70,6 @@ ACTOR Cacodemon_ : Cacodemon Replaces Cacodemon
 		H3D2 F -1
         TNT1 A 0 A_SpawnItem ("DeadCacoDemon1", 1)
         Stop
-		
-	   Death.Fatality:
-        TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_Pain
-		TNT1 A 0 A_JumpIfIntargetInventory("FistsSelected", 1, 1)
-		Goto Death.SSG
-		TNT1 A 0 A_GiveToTarget("GoFatality", 1)
-        TNT1 A 0 A_Jump(128,5)
-        TNT1 A 0 A_GiveToTarget("CacoDemonFatality", 1)
-        Stop
-        TNT1 AAAAAAA 0
-        TNT1 A 0 A_GiveToTarget("CacoDemonFatality2", 1)
-        TNT1 A 1
-        TNT1 A 0
-		Stop
 		
 	Death.saw:
         TNT1 A 0 A_SetFloorClip
@@ -255,40 +203,6 @@ ACTOR Cacodemon_ : Cacodemon Replaces Cacodemon
         TNT1 A 0 A_SpawnItem("CacoDemon")
         Stop
 		
-
-FatalityMarine:
-        TNT1 A 0 A_SetInvulnerable
-       CFPF A 1
-	   TNT1 A 0 A_PlaySound("DSFDTHE")
-       CFPF A 10
-		 TNT1 AAA 0 A_CustomMissile ("XDeath1", 1, 0, random (0, 360), 2, random (0, 160))
-         TNT1 AA 0 A_CustomMissile ("BrainBlood", 25, 0, random (0, 360), 2, random (0, 160))
-	  
-	  CFPF B 9
-		 TNT1 AAA 0 A_CustomMissile ("XDeath1", 1, 0, random (0, 360), 2, random (0, 160))
-         TNT1 AA 0 A_CustomMissile ("BrainBlood", 25, 0, random (0, 360), 2, random (0, 160))
-	  CFPF C 9
-	  
-	  
-	  	  CFPF B 9
-		 TNT1 AAA 0 A_CustomMissile ("XDeath1", 1, 0, random (0, 360), 2, random (0, 160))
-         TNT1 AA 0 A_CustomMissile ("BrainBlood", 25, 0, random (0, 360), 2, random (0, 160))
-	  CFPF C 9
-	  
-	  	  CFPF B 9
-		 TNT1 AAA 0 A_CustomMissile ("XDeath1", 1, 0, random (0, 360), 2, random (0, 160))
-         TNT1 AA 0 A_CustomMissile ("BrainBlood", 25, 0, random (0, 360), 2, random (0, 160))
-	  CFPF C 9
-	  
-	  CFPF B 9
-	   TNT1 AAA 0 A_CustomMissile ("XDeath1", 1, 0, random (0, 360), 2, random (0, 160))
-      TNT1 AA 0 A_CustomMissile ("BrainBlood", 25, 0, random (0, 360), 2, random (0, 160))
-	  CFPF C 9
-       TNT1 A 0 A_TakeInventory("Curbstomp_Marine",1)
-TNT1 A 0 A_SpawnItem ("PlayerJustGotCutInHalf", 1)
-TNT1 A 0 A_UnSetInvulnerable
-Goto See
-
 Death.Massacre:
 	Goto Death	
 		

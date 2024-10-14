@@ -83,46 +83,6 @@ ACTOR Imp: DoomImp Replaces DoomImp
 		TNT1 A 0
         Stop	
 		
-	Death.HelperMarineFatallity:
-	Death.RVFT:
-		TNT1 A 0
-	    TNT1 A 1 A_Pain
-		TNT1 A 0 A_Scream
-		TNT1 A 0 A_NoBlocking
-        TNT1 A 0 A_GiveToTarget("ImpFatality3", 1)
-		TNT1 A 0 A_GiveToTarget("ImpFatality", 1)
-        Stop	
-		
-	Death.Fatality:
-		TNT1 A 0 A_Pain
-        TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_JumpIfIntargetInventory("FistsSelected", 1, 1)
-		Goto Death.ExplosiveImpact
-		TNT1 A 0 A_GiveToTarget("GoFatality", 1)
-		TNT1 A 0 A_Jump(255, "Death.Fatality1", "Death.Fatality1", "Death.Fatality2", "Death.Fatality3")
-		Goto Death.Fatality1
-
-        Death.Fatality1:
-        TNT1 A 0 A_GiveToTarget("ImpFatality", 1)
-        Stop
-		Death.Fatality2:
-		TNT1 A 0 A_GiveToTarget("ImpFatality2", 1)
-		Stop
-		Death.Fatality3:
-		Death.BHFT:
-		TNT1 A 0 A_GiveToTarget("ImpFatality3", 1)
-		Stop
-		
-	GotoStealthKill:
-		TNT1 A 1
-		TNT1 A 0 A_GiveToTarget("SKImp")
-		TNT1 A 0 A_GiveToTarget("GoFatality", 1)
-		TNT1 A 1 A_Die("Stealthy")
-		Stop
-		Death.Stealthy:	
-		TNT1 A 0 A_NoBlocking
-		Stop
-		
 	Pain.Melee:
 		TNT1 D 0
 		TROO A 2
@@ -170,19 +130,6 @@ Pain.ExplosiveImpact:
          IZD4 KL 8
 		Goto FallingAfterImpact
 		
-
-    Pain.Kick:
-         TNT1 A 0
-         IZD4 K 1 A_Pain
-		// TNT1 A 0 A_JumpIfInventory ("IsDown", 1, "Pain")
-		  //TNT1 A 0 A_TakeInventory("SKZombieman", 1)
-         TNT1 A 0 A_GiveInventory("IsDown", 1)
-        TNT1 A 0 ThrustThingZ(0,20,0,1)
-		//ID11 E 1 A_Chase ("","")
-		IZD4 K 1 A_facetarget
-        IZD4 K 6 ThrustThing(angle*256/360+128, 5, 0, 0)
-         IZD4 L 8
-		Goto FallingAfterImpact
 		
 	Pain.HeavyImpact:
          TNT1 A 0
@@ -608,7 +555,7 @@ Death.MinorLeg:
         TNT1 A 0 A_SpawnItem ("DeadImp_Half", 5)
 		Stop
 
-DeathNoGuts:
+	DeathNoGuts:
         TNT1 AAAAA 0
 		TNT1 AA 0 A_CustomMissile ("Instestin", 24, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_CustomMissile ("MuchBlood", 30, 0, random (0, 360), 2, random (0, 160))
@@ -907,32 +854,9 @@ DeathNoGuts:
         TNT1 A 0 A_TakeInventory("Fatality_Marine",1)
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
         TNT1 A 0 A_UnSetInvulnerable
-TNT1 A 0 A_SpawnItem ("MarineGotOwnedByImp", 1)
-Goto See 
-		 
-	StealthKill:
-	TNT1 A 0
-	TNT1 A 0 A_JumpIfInTargetInventory("FistsSelected", 1, 1)
-	Goto Death
-	TNT1 A 0 A_GiveToTarget("GoFatality", 1)
-	TNT1 A 0 A_GiveToTarget("SKImp", 1)
-	TNT1 A 0 A_NoBlocking
-	TNT1 A 0 A_Fall
-	TNT1 A 1
-	TNT1 A 0 A_Die("Stealthy")
-	TNT1 A 1
-	Stop
-	Death.Stealthy:
-	TNT1 A 0
-	Stop
+		TNT1 A 0 A_SpawnItem ("MarineGotOwnedByImp", 1)
+		Goto See 
 	
-	Swim:
-	TNT1 A 0
-	TNT1 A 0 A_NoBlocking
-	TNT1 A 0 A_Fall
-	TNT1 A 0 A_SpawnItem("ImpFish")
-	Stop
-
 	Death.Massacre:
 	Goto Death
 	
@@ -1061,11 +985,11 @@ ACTOR FireBall_ Replaces DoomImpBall
 {
 	Game Doom
 	DamageType Burn
-	Radius 4
-	Height 10
-	Speed 14
-	FastSpeed 18
-	Damage (random(15,20))
+	Radius 6
+	Height 8
+	Speed 10
+	FastSpeed 20
+	Damage 3
 	PROJECTILE
     +THRUGHOST
 	RenderStyle Add
