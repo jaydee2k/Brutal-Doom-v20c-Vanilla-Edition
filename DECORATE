@@ -91,7 +91,6 @@ damage 0
 #include KNIGHT.txt
 #include BARON.txt
 #include LOSTSOUL.txt
-#include Soul.txt
 #include SPIDERS.txt
 #include REVENANT.txt
 #include MANCUBUS.txt

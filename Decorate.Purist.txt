@@ -1,10 +1,4 @@
 
-Actor IsPlayingAsPurist : Inventory
-{
-inventory.maxamount 1
-}
-
-
 ACTOR Purist : Doomer
 {
 	Player.DisplayName "Classic"

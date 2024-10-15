@@ -73,9 +73,3 @@ Script 719 (VOID)
 if	(GameType () == GAME_NET_DEATHMATCH) 
 	SetActorState(0,"DM"); 
 }
-
-Script 728 (VOID)
-{
-if	(GetCvar("bd_nobulletpenetration") == 0) { TakeInventory("nopenetration", 1);}
-if	(GetCvar("bd_nobulletpenetration") == 1) { GiveInventory("nopenetration", 1);}
-}

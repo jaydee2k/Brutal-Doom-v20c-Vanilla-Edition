@@ -48,9 +48,6 @@ OptionMenu "BrutalOptions"
   
   StaticText "===== Server options ====="
   StaticText "(Requires map restart to take effect)"
-  Option "Enable Bullet Penetration", "bd_nobulletpenetration", "YesOrNoFalse"
-  StaticText "Makes bullets and rockets penetrate thin walls and doors."
-  StaticText " "
   
   Option "Disable Advanced Decorative Objects", "bd_disabledecorations", "YesOrNo"
   StaticText " "

@@ -750,15 +750,6 @@ flickerlight LOSTSOUL_X4
     chance 0.25
 }
 
-object TehLostSoul
-{
-    frame LSOL { light LOSTSOUL_X1 }
-}
-
-
-
-
-
 // Mancubus Fireball
 object BigFireBall
 {
