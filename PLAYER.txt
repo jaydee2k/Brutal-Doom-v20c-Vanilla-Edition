@@ -269,7 +269,6 @@ var int user_sgverticalspread;
 		NULL A 0 SetPlayerProperty(0,1,0)
 		TNT1 A 0 A_Changeflag("NOPAIN", 1)
 		MARN A 0 A_TakeInventory("ChainguyguyContinue", 1)
-		MARN A 0 A_TakeInventory("HasInfrared", 1)
 		MARN A 0 A_TakeInventory("PlayerIsDead", 1)
 		MARN D 1
 		MARN A 0 ACS_ExecuteAlways(171, 0, 0, 0, 0)//Disable Camera.

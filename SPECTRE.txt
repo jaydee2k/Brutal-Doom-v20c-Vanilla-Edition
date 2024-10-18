@@ -17,9 +17,7 @@ ACTOR Spectro: BullDemon Replaces Spectre
 		Loop
 		
 	See:
-        TNT1 A 0 A_SpawnItemEx("FootStep", 0, 0, 30, 0, 0)
-		TNT1 A 0 A_JumpIfInTargetInventory("HasInfrared", 1, "SeeVisible")
-		SARG AAABBBCCCDDD 1 A_Chase
+        SARG AAABBBCCCDDD 1 A_Chase
 		Loop
 		
 	Pain:
