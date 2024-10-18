@@ -17,9 +17,7 @@ Just plain vanilla gameplay with fully working Brutal Doom gore.
 But yeah, there are some minor differences for the sake of keeping all gore effects in.
 
 -Headshots are still possible
--Barrells explode still way too heavy (those gibs are too satisfying)
 -Super Shotgun does +15 fixed damage, needed for some gore effects to trigger, so I lowered pellets from 20 to 19
--Pistol, Chaingun and Shotgun have a minor vertical spread of 0.6 (0 is vanilla)
 
 
 You can say I took one step further than bdlite gameplaywise and one step back in keeping every gore effect in.
