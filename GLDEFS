@@ -1026,11 +1026,6 @@ object ROCKET2
     frame MISL { light ROCKETLIGHT }
 }
 
-object CyberBalls
-{
-    frame WIVB { light ROCKETLIGHT }
-}
-
 object BigFireBallWithGravity
 {
     frame MANFA { light IMPBALL   }

@@ -1708,34 +1708,6 @@ ACTOR GoreBloodFly: Brutal_FlyingBlood
  speed 10
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ACTOR WallRedBlood
 {
  game Doom
@@ -1806,30 +1778,6 @@ ACTOR ShortWallRedBlood: WallRedBlood
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ACTOR MediumInfiniteBlood: Brutal_FlyingBlood
 {
     States
@@ -1892,14 +1840,6 @@ ACTOR MiniBloodDropEffect
     Stop
     }
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -2427,9 +2367,8 @@ ACTOR SplatteredSmall: Brutal_BloodSpot
  states
  {
  Spawn:
-TNT1 A 0 A_JumpIf(waterlevel > 1, "Splash")
- //TNT1 A 0 Acs_executealways(373, 0, 0, 0, 0)//Check if is under a liquid
-    TNT1 A 0 A_FaceTarget
+	TNT1 A 0 A_JumpIf(waterlevel > 1, "Splash")
+	TNT1 A 0 A_FaceTarget
 	TNT1 A 2
     TNT1 A 0 A_JumpIfInventory("IsOverWater", 1, "Splash")
 	TNT1 A 0 A_JumpIfInventory("IsOverSlime", 1, "Splash")
@@ -2446,12 +2385,10 @@ ACTOR SplatteredLarge: Brutal_BloodSpot
  states
  {
  Spawn:
- TNT1 A 0 A_JumpIf(waterlevel > 1, "Splash")
- //TNT1 A 0 Acs_executealways(373, 0, 0, 0, 0)//Check if is under a liquid
-    TNT1 A 0 A_FaceTarget
+	TNT1 A 0 A_JumpIf(waterlevel > 1, "Splash")
+	TNT1 A 0 A_FaceTarget
 	TNT1 A 2
-	
-    TNT1 A 0 A_JumpIfInventory("IsOverWater", 1, "Splash")
+	TNT1 A 0 A_JumpIfInventory("IsOverWater", 1, "Splash")
 	TNT1 A 0 A_JumpIfInventory("IsOverSlime", 1, "Splash")
 	TNT1 A 0 A_JumpIfInventory("IsOverlava", 1, "Splash")
 	TNT1 A 0 A_SpawnItemEx ("BootSmearerRed",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
@@ -2459,9 +2396,6 @@ ACTOR SplatteredLarge: Brutal_BloodSpot
 	Stop
  }
 }
-
-
-
 
 ACTOR RedBloodFootPrintLeft: GrowingBloodPool
 {
@@ -2472,8 +2406,7 @@ Scale 0.09
  Spawn:
  Death:
  Crash:
-TNT1 A 0 A_JumpIf(waterlevel > 1, "Splash")
- TNT1 A 0 Acs_executealways(373, 0, 0, 0, 0)//Check if is under a liquid
+	TNT1 A 0 A_JumpIf(waterlevel > 1, "Splash")
 	TNT1 A 2
 	TNT1 A 0 ACS_ExecuteAlways(798, 0, 0, 0, 0)//Check Effects
     TNT1 A 0 A_JumpIfInventory("IsOverWater", 1, "Splash")
@@ -2485,12 +2418,11 @@ TNT1 A 0 A_JumpIf(waterlevel > 1, "Splash")
 	BPDL A 600
 	TNT1 A 0 A_JumpIfInventory("LowGraphicsMode", 1, "Splash")
 	Loop
-Splash:
-TNT1 A 0
-Stop	
+ Splash:
+	TNT1 A 0
+	Stop	
  }
 }
-
 
 ACTOR RedBloodFootPrintRight: GrowingBloodPool
 {
@@ -2501,8 +2433,7 @@ Scale 0.09
  Spawn:
  Death:
  Crash:
-TNT1 A 0 A_JumpIf(waterlevel > 1, "Splash")
- TNT1 A 0 Acs_executealways(373, 0, 0, 0, 0)//Check if is under a liquid
+	TNT1 A 0 A_JumpIf(waterlevel > 1, "Splash")
 	TNT1 A 2
 	TNT1 A 0 ACS_ExecuteAlways(798, 0, 0, 0, 0)//Check Effects
     TNT1 A 0 A_JumpIfInventory("IsOverWater", 1, "Splash")
@@ -2514,12 +2445,11 @@ TNT1 A 0 A_JumpIf(waterlevel > 1, "Splash")
 	BPDL A 600
 	TNT1 A 0 A_JumpIfInventory("LowGraphicsMode", 1, "Splash")
 	Loop
-Splash:
-TNT1 A 0
-Stop
+ Splash:
+	TNT1 A 0
+	Stop
  }
 }
-
 
 ACTOR BootSmearerRed: GrowingBloodPool
 {
@@ -2536,11 +2466,10 @@ Height 0
  {
  Spawn:
  TNT1 A 0
- //TNT1 A 0 A_GiveInventory("TargetIsAMarine", 1)
  TNT1 A 1 A_Look
  Goto See
   
-  See:
+ See:
     TNT1 A 1 A_Chase("","")
 	TNT1 A 0 A_Die("LookForPlayer")
  Death:	
@@ -2572,7 +2501,6 @@ Height 0
  {
  Spawn:
  TNT1 A 0
- //TNT1 A 0 A_GiveInventory("TargetIsAMarine", 1)
  TNT1 A 1 A_Look
  Goto See
   
@@ -2606,7 +2534,6 @@ Height 0
  {
  Spawn:
  TNT1 A 0
- //TNT1 A 0 A_GiveInventory("TargetIsAMarine", 1)
  TNT1 A 1 A_Look
  Goto See
   
