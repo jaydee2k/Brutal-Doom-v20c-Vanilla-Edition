@@ -119,8 +119,7 @@ ACTOR Revenant1: Revenant Replaces Revenant
 		Goto Death.Rare
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
-	    SKEX A 100 A_SpawnItem("RevenantU", 0, 40)
-		SKEX BCDE 6
+	    SKEX BCDE 6
         TNT1 A 0 A_SpawnItem ("XDeadSkeleton", 1)
         Stop
 		
