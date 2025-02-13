@@ -170,8 +170,7 @@ ACTOR Revenant1: Revenant Replaces Revenant
 	Death.Rare:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
-	    SKEX A 0 A_SpawnItem("RevenantU", 0, 40)
-		TNT1 A 0 A_CustomMissile ("RoamingLegs", 0, 0, random (0, 360), 2, random (0, 160))
+	    TNT1 A 0 A_CustomMissile ("RoamingLegs", 0, 0, random (0, 360), 2, random (0, 160))
 		Stop
 		
 	Raise:
