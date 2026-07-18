@@ -215,11 +215,11 @@ ACTOR ClassicPistol : DoomWeapon Replaces Pistol
 		TNT1 A 0 A_PlaySound("weapons/rifle")
 		RIFF A 0 A_FireCustomMissile("Tracer", random(-1,1), 0, -1, 0)
 		TNT1 A 0 A_SetPitch(-1.0 + pitch)
-		PKPI F 6 BRIGHT
-		PKPI CDE 4 A_SetPitch(0.25 + pitch)
+		PKPI F 2 BRIGHT
+		PKPI CDE 2 A_SetPitch(0.25 + pitch)
 		TNT1 A 0 A_FireCustomMissile("RifleCaseSpawn",5,0,8,-9)
-		PKPI D 2
-		PKPI C 2
+		PKPI D 3
+		PKPI C 3
 		PKPI B 0
 		PKPI A 5 A_ReFire
 		Goto Ready
@@ -268,7 +268,7 @@ ACTOR ClassicShotgun : DoomWeapon Replaces Shotgun
 		PKSG JKKLLMMMLLKKJIHGF 1
 		PKSG A 3
 		TNT1 A 0 A_Refire
-		PKSG A 10 A_WeaponReady
+		PKSG A 8 A_WeaponReady
 		Goto Ready
 	Spawn:
 		SHOT A -1
